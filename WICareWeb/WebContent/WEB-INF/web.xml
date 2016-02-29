@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>pages/Register_page.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.wicare.web.user.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/register.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ShoppingServlet</servlet-name>
+    <servlet-class>com.wicare.web.shopping.ShoppingServlet</servlet-class>
+   </servlet>  
+   <servlet-mapping>
+    <servlet-name>ShoppingServlet</servlet-name>
+    <url-pattern>/category.do</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ShoppingServlet</servlet-name>
+    <url-pattern>/shoppingcart.do</url-pattern>
+   </servlet-mapping> 
+  
+  <filter>
+    <filter-name>authenticationFilter</filter-name>
+    <filter-class>com.wicare.web.filter.AuthenticationFilter</filter-class>
+    <init-param>
+      <param-name>test-param</param-name>
+      <param-value>Initialization Paramter</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>authenticationFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+</web-app>
