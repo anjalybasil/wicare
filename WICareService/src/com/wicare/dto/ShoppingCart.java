@@ -6,10 +6,9 @@ import java.util.List;
 
 public class ShoppingCart 
 {
+	private final double SALES_TAX = 1.02;
 	private List<FoodProduct> products = new ArrayList<FoodProduct>();
 	private double total;
-	
-	//Refactor code so that nothing is left behind.
 	private double subTotal;
 	
 	public List<FoodProduct> getProducts() 
@@ -20,7 +19,6 @@ public class ShoppingCart
 	public void setProducts(List<FoodProduct> products) 
 	{
 		this.products = products;
-		
 	}
 
 	public double getSubTotal() 
@@ -30,18 +28,18 @@ public class ShoppingCart
 		subTotal = calculateSubTotal();
 		
 		
-		return Double.valueOf(df.format(total));
+		return Double.valueOf(df.format(subTotal));
 	}
 
 	private double calculateSubTotal() 
 	{	
-		double subTotal = 0;
+		double amt = 0;
 		//Loop through currentOrder and determine total
 		for(int i = 0; i < this.products.size(); i++)
 		{
-			total += (this.products.get(i).getFoodPrice() * this.products.get(i).getFoodAmount());
+			amt += (this.products.get(i).getFoodPrice() * this.products.get(i).getFoodAmount());
 		}
-		return subTotal;
+		return amt;
 	}
 
 	public void setSubTotal(double subTotal) {
@@ -50,8 +48,8 @@ public class ShoppingCart
 
 	public double getTotal() 
 	{
-		 DecimalFormat df = new DecimalFormat("0.00");
-		total = calculateTotal();
+		DecimalFormat df = new DecimalFormat("0.00");
+		total = getSubTotal() * SALES_TAX;
 		
 		
 		return Double.valueOf(df.format(total));
@@ -60,16 +58,6 @@ public class ShoppingCart
 	public void setTotal(double total) 
 	{
 		this.total = total;
-	}
-	public double calculateTotal()
-	{
-		double total = 0;
-		//Loop through currentOrder and determine total
-		for(int i = 0; i < this.products.size(); i++)
-		{
-			total += (this.products.get(i).getFoodPrice() * this.products.get(i).getFoodAmount());
-		}
-		return total;
 	}
 	
 	public void addProduct(FoodProduct product)

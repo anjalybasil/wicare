@@ -133,9 +133,9 @@
 
 											<div class="qty min clearfix">
 
-												<button class="theme_button" data-direction="minus">&#45;</button>
+												<button type="submit" formaction="/WICareWeb/jsp/home.jsp" class="theme_button" data-direction="minus">&#45;</button>
 												<input type="text" name="" value='${currentOrder.foodAmount}' />
-												<button class="theme_button" data-direction="plus">&#43;</button>
+												<button type="submit" formaction="/WICareWeb/jsp/home.jsp" class="theme_button" data-direction="plus">&#43;</button>
 
 											</div><!--/ .qty.min.clearfix-->
 
@@ -164,13 +164,13 @@
 
 							<div class="left_side">
 
-								<a href="shoppingcart.do?action=print_all_food" class="button_blue middle_btn">Continue Shopping</a>
+								<a href="${pageContext.request.contextPath}/category.do?action=print_all_food" class="button_blue middle_btn">Continue Shopping</a>
 
 							</div>
 
 							<div class="right_side">
 
-								<a href="#" class="button_grey middle_btn">Clear Shopping Cart</a>
+								<a href="${pageContext.request.contextPath}/shoppingcart.do?action=clear_cart" class="button_grey middle_btn">Clear Shopping Cart</a>
 
 							</div>
 
@@ -195,14 +195,14 @@
 											<tr>
 													
 												<td>Subtotal</td>
-								<td><c:out value='${(sessionScope.user.currentOrder.subTotal)}' /></td>
+								<td><c:out value='$ ${(sessionScope.user.currentOrder.subTotal)}' /></td>
 
 											</tr>
 
 											<tr class="total">
 													
 												<td>Total</td>
-									<td><c:out value='${sessionScope.user.currentOrder.total * 1.03}' /></td>
+									<td><c:out value='$ ${sessionScope.user.currentOrder.total}' /></td>
 
 											</tr>
 

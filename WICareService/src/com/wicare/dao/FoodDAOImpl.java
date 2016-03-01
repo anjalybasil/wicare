@@ -240,9 +240,51 @@ public class FoodDAOImpl implements FoodDAO
 	public List<FoodProduct> getFoodByName(String name) 
 	{
 		//SELECT * FROM `wicare`.wi_product WHERE product_name LIKE "%name%"
+		ResultSet resultSet = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String query = "SELECT * FROM wicare.wi_product WHERE product_name LIKE ?";
+		try
+		{
+			con =  ConnectionManager.getConnectionFromDataSource();
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, "%"+name+"%");
+			resultSet =  ConnectionManager.executeQuery(pstmt);
+		}
+		catch(SQLException e)	{e.printStackTrace();}
+		catch(CustomException e){e.printStackTrace();}
+		List<FoodProduct> foodList = new ArrayList<FoodProduct>();
 		
+		if(resultSet == null)
+		{
+			return foodList;
+		}
 		
-		return null;
+		try
+		{
+			while(resultSet.next())
+			{
+				FoodProduct food = new FoodProduct();
+				food.setFoodID(resultSet.getInt("product_id"));
+				food.setFoodName(resultSet.getString("product_name"));
+				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setFoodCategory(resultSet.getString("product_category"));
+				food.setFoodAmount(resultSet.getInt("product_amount"));
+				food.setImgFile(resultSet.getString("product_img_file"));
+				food.setFoodSubCategory(resultSet.getString("product_subcategory"));
+				foodList.add(food);
+			}
+		}
+		catch(SQLException e){System.out.println("Error Message: " + e);}
+		finally
+		{
+			try
+			{
+				con.close();
+			}
+			catch(Exception e){e.printStackTrace();}
+		}
+		return foodList;
 	}
 	
 }

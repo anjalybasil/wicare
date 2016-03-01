@@ -512,12 +512,6 @@
 										<!-- - - - - - - - - - - - - - End of mega menu - - - - - - - - - - - - - - - - -->
 
 									</li>
-									<li class="has_megamenu"><a href="#">Bread</a></li>
-									<li class="has_megamenu"><a href="#">Dairy</a></li>
-                                    <li class="has_megamenu"><a href="#">Pasta</a></li>
-                                    <li class="has_megamenu"><a href="#">Rice</a></li>
-                                    <li class="has_megamenu"><a href="#">Oil</a></li>
-                                    <li class="has_megamenu"><a href="#">Snacks</a></li>
 									<li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=bread">Bread</a></li>
 									<li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=dairy">Dairy</a></li>
                                     <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=pasta">Pasta</a></li>
@@ -589,7 +583,7 @@
 												<div class="caption sfl stl layer_3" data-x="left" data-y="190" data-hoffset="60" data-easing="easeOutBack" data-speed="600" data-start="1100">at Low Prices</div>
 
 												<div class="caption sfb stb" data-x="left" data-y="245" data-hoffset="60" data-easing="easeOutBack" data-speed="700" data-start="1100">
-													<a href="jsp/category_page.html" class="button_blue big_btn">Shop Now!</a>
+													<a href="${pageContext.request.contextPath}/category.do?action=print_all_food\" class="button_blue big_btn">Shop Now!</a>
 												</div>
 
 											</li>
@@ -694,7 +688,7 @@
 											<!-- - - - - - - - - - - - - - Carousel of featured products - - - - - - - - - - - - - - - - -->
 
 											<div class="owl_carousel carousel_in_tabs">
-												
+											 <c:forEach var="food" items="${foodList.food}" />
 												<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
 
 												<div class="product_item type_2">
