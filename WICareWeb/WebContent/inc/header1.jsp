@@ -1,3 +1,59 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic page needs
+		============================================ -->
+		<title>WICare | My Account</title>
+		<meta charset="utf-8">
+		<meta name="author" content="">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+
+		<!-- Mobile specific metas
+		============================================ -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Favicon
+		============================================ -->
+		<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/fav_icon.ico">
+
+		<!-- Google web fonts
+		============================================ -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+		<!-- Libs CSS
+		============================================ -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/fontello.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+		
+		<!-- Theme CSS
+		============================================ -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/js/arcticmodal/jquery.arcticmodal.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/js/owlcarousel/owl.carousel.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
+		<!-- JS Libs
+		============================================ -->
+		<script src="${pageContext.request.contextPath}/js/modernizr.js"></script>
+
+	
+<script type="text/javascript">
+  
+function submitThisForm(f) {
+	alert( "clicked");
+	f.action = "${pageContext.request.contextPath}/login.do";
+	f.submit();
+	return true;
+}
+
+</script>
+
+
 <!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->
 		
         <header id="header" class="type_6">
@@ -16,7 +72,7 @@
 
 									<a href="index.html" class="logo">
 
-										<img src="images/WIClogo2.png" alt="" width="339" height="80">
+										<img src="${pageContext.request.contextPath}/images/WIClogo2.png" alt="" width="339" height="80">
 
 									</a>
 
@@ -53,34 +109,54 @@
 									<!-- - - - - - - - - - - - - - End search form - - - - - - - - - - - - - - - - -->
 
 								</div><!--/ [col]-->
+								
+								
+								
+ 							
+								<div class="col-lg-3 col-sm-4" >
 
-								<div class="col-lg-3 col-sm-4">
-
-									<div class="clearfix">
-
-										
+								<div class="clearfix">										
 
 								  </div><!--/ .clearfix-->
 
-									<!-- - - - - - - - - - - - - - Loginbox & Wishlist & Compare - - - - - - - - - - - - - - - - -->
+									<!-- - - - - - - - - - - - - - Loginbox & Wishlist & Compare - - - - - - - - - - - - - - - - --> 							
 
-									<ul class="account_bar">
-
-										<li></li>
+									<ul class="account_bar" >
 
 										<li></li>
 
-										<li>
+										<li></li>
+										<c:if test="${sessionScope.hasLoggedIn == null or !sessionScope.hasLoggedIn}">
+											<li>
+	
+											  <div class="login_box"><div class="login_box_inner">Welcome Guest <a href="${pageContext.request.contextPath}/jsp/login.jsp" >Login</a> or 
+											   <a href="${pageContext.request.contextPath}/jsp/register_page.jsp">Register</a></div></div>
+	
+										   </li>
+									   </c:if>	
+									   <c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">
+									   <li>
 
-										  <div class="login_box"><div class="login_box_inner">Welcome visitor <a href="login.html" data-modal-url="modals/login.html">Login</a> or <a href="Register_page.html">Register</a></div></div>
+										  <div class="login_box"><div class="login_box_inner">Welcome ${sessionScope.user.firstName}  </div>
+										  
+										  <form id="logout_form" action="${pageContext.request.contextPath}/login.do" method="post" name="logoutform" >
+												<input type="hidden" id="action" name="action" value="logout">	
+																							
+												<a href='javascript:document.logoutform.submit()' >Logout</a>
+												
+										  </form>		
+										  
+										  </div>
 
-									  </li>
+									   </li>
+									   </c:if>
 
 									</ul><!--/ .account_bar-->
 
 									<!-- - - - - - - - - - - - - - End Loginbox & Wishlist & Compare - - - - - - - - - - - - - - - - -->
 
 								</div><!--/ [col]-->
+							
 
 							</div><!--/ .main_header_row-->
 
@@ -118,15 +194,30 @@
 
 											<ul>
 
-												<li><a href="index.html">Home</a></li>
-												<li><a href="shop_my_account.html">My Account</a></li>
-												<li><a href="shop_shopping_cart.html">Shopping Cart</a></li>
-												<li><a href="shop_checkout.html">Checkout</a></li>
+												<li><a href="${pageContext.request.contextPath}/jsp/home.jsp">Home</a></li>
+												<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
+												   
+																							
+													
+													
+												     <li><a href='javascript:document.myaccountform.submit()' >My Account</a></li>
+													
+													 <form id="myaccount_form" action="${pageContext.request.contextPath}/user.do" method="post" name="myaccountform" >
+														<input type="hidden" id="action" name="action" value="myaccount">														
+													 </form>		
+										  
+													
+													
+													
+													<li><a href="${pageContext.request.contextPath}/jsp/shop_shopping_cart.jsp">Shopping Cart</a></li>
+													<li><a href="shop_checkout.html">Checkout</a></li>
+													
+												</c:if>
 												<li></li>
 												<li><a href="additional_page_contact.html">Contact Us</a></li>
-											  
+											   
 
-												</li>
+												
 
 											</ul>
 
@@ -137,12 +228,13 @@
 									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
 
 									<!-- - - - - - - - - - - - - - Navigation item - - - - - - - - - - - - - - - - -->
-
+									<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
 									<div class="nav_item size_3">
 
-										<button id="open_shopping_cart" class="open_button" data-amount="3">
+										<button id="open_shopping_cart" class="open_button" data-amount="3" >
 											<b class="title">My Cart</b>
 											<b class="total_price">$999.00</b>
+											
 										</button>
 
 										<!-- - - - - - - - - - - - - - Products list - - - - - - - - - - - - - - - - -->
@@ -242,6 +334,7 @@
 										<!-- - - - - - - - - - - - - - End of products list - - - - - - - - - - - - - - - - -->
 										
 									</div><!--/ .nav_item-->
+									</c:if>
 
 									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
 
@@ -260,3 +353,4 @@
 				<!-- - - - - - - - - - - - - - End of main navigation wrapper - - - - - - - - - - - - - - - - -->
 
 			</header>
+			</html>

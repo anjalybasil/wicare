@@ -1,15 +1,28 @@
 package com.wicare.web.user.controller;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 import com.wicare.dto.Address;
+import com.wicare.dto.Order;
+import com.wicare.dto.OrderDetail;
 import com.wicare.dto.User;
 import com.wicare.ejb.locator.EmployeeResourceException;
+import com.wicare.ejb.locator.ShoppingDelegate;
 import com.wicare.ejb.locator.UserDelegate;
 import com.wicare.web.util.EncryptionUtil;
 
 public class UserController {
+	
+	public static Logger logger = Logger.getLogger(UserController.class);
 	
 	public User register(HttpServletRequest request, HttpServletResponse response){
 		
@@ -91,20 +104,80 @@ public class UserController {
 		user.getAddressList().add(address);
 		
 		
-		UserDelegate userDelegate = null;
-		try {
-			userDelegate = new UserDelegate();
-			user = userDelegate.updateUser(user);
-			return user;
-		} catch (EmployeeResourceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		UserDelegate userDelegate = getUserDelegate();
+		user = userDelegate.updateUser(user);
+		return user;
 		
-		return null;
 		
 		
 	}
+  
+  
+  public List<Order> getOrdersByUser(HttpServletRequest request, HttpServletResponse response){
+	 
+	  HttpSession session = request.getSession(false);
+	
+	  int userID = ((User)session.getAttribute("user")).getUserid();
+	  logger.info("userID" + userID);
+	  
+	  
+	  // TODO : Call Delegate.getOrdersByUser
+	  
+	  ShoppingDelegate shoppingDelegate = getShoppingDelegate();
+	  List<Order> orderList  = shoppingDelegate.getOrdersByUser(userID);
+	  
+	  System.out.println("OrderList" + orderList);
+	  
+	  Order order = null;
+	  orderList = new ArrayList<Order>();
+	  order = new Order();
+	  order.setOrderID(1);
+	  order.setOrderDate(""+new Date());
+	  order.setOrderTotal(999);
+	  orderList.add(order);
+	  
+	  order = new Order();
+	  order.setOrderID(2);
+	  order.setOrderDate(""+new Date());
+	  order.setOrderTotal(888);
+	  orderList.add(order);
+	  
+	  return orderList;
+  }
+  
+  
+  public List<OrderDetail> getOrderDetails(HttpServletRequest request, HttpServletResponse response){
+		 
+	
+	  int orderId = Integer.parseInt(request.getParameter("orderID"));
+	  logger.info("orderId" + orderId);
+	  
+	  
+	  // TODO : Call Delegate.getOrdersByUser
+	  
+	  ShoppingDelegate shoppingDelegate = getShoppingDelegate();
+	  List<OrderDetail> orderDetailList  = shoppingDelegate.getOrderDetails(orderId);
+	  
+	  System.out.println("orderDetailList" + orderDetailList);
+	  
+	  OrderDetail order = null;
+	  orderDetailList = new ArrayList<OrderDetail>();
+	  order = new OrderDetail();
+	  order.setOrderID(1);
+	  order.setProductName("Tomato");
+	  order.setProductPrice(120);
+	  order.setProductQuantity(2);
+	  orderDetailList.add(order);
+	  
+	  order = new OrderDetail();
+	  order.setOrderID(1);
+	  order.setProductName("Spinach");
+	  order.setProductPrice(50);
+	  order.setProductQuantity(5);
+	  orderDetailList.add(order);
+	  
+	  return orderDetailList;
+  }
 	
 	
 	private UserDelegate getUserDelegate(){
@@ -112,6 +185,20 @@ public class UserController {
 		try {
 			userDelegate = new UserDelegate();
 			return userDelegate;
+		} catch (EmployeeResourceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	
+	private ShoppingDelegate getShoppingDelegate(){
+		ShoppingDelegate shoppingDelegate = null;
+		try {
+			shoppingDelegate = new ShoppingDelegate();
+			return shoppingDelegate;
 		} catch (EmployeeResourceException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

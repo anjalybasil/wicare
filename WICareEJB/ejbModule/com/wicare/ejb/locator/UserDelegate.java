@@ -21,7 +21,7 @@ public class UserDelegate {
 	public UserDelegate() throws EmployeeResourceException{
 		
 		try{
-			UserHome home = (UserHome)WICareServiceLocator.getInstance().getRemoteHHome(USER_BEAN_JNDI, USER_HOME);
+			UserHome home = (UserHome)WICareServiceLocator.getInstance().getRemoteHome(USER_BEAN_JNDI, USER_HOME);
 			session = home.create();
 		
 		}catch(RemoteException e){

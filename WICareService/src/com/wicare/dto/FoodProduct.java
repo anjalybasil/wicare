@@ -107,6 +107,14 @@ public class FoodProduct implements Serializable
 	public void setImgFile(String imgFile) {
 		this.imgFile = imgFile;
 	}
+	
+	
+	@Override
+	public String toString() {
+		return "FoodProduct [foodID=" + foodID + ", foodName=" + foodName + ", foodPrice=" + foodPrice
+				+ ", foodCategory=" + foodCategory + ", foodSubCategory=" + foodSubCategory + ", foodAmount="
+				+ foodAmount + ", imgFile=" + imgFile + "]";
+	}
 
 	
 }

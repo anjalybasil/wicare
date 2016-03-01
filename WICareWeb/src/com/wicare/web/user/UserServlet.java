@@ -1,6 +1,7 @@
 package com.wicare.web.user;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.wicare.dto.Order;
+import com.wicare.dto.OrderDetail;
 import com.wicare.dto.User;
 import com.wicare.web.user.controller.UserController;
 
@@ -55,12 +58,32 @@ public class UserServlet extends HttpServlet {
 		}else if("update".equalsIgnoreCase(action)){		
 			User user =  userController.updateUser(request, response);
 			if(null != user){
-	   			  HttpSession session = request.getSession(true);
+	   			  HttpSession session = request.getSession(false);
 				  session.setAttribute("user",user);
 				  session.setAttribute("hasLoggedIn",true);
 				  nextJSP = "/jsp/my_account.jsp";				  
 			}else{
 				  nextJSP = "/jsp/register_page.jsp";
+				  
+			}
+			
+		}else if("myorders".equalsIgnoreCase(action)){		
+			List<Order> orderList = userController.getOrdersByUser(request, response);
+			if(null != orderList){
+	   			  HttpSession session = request.getSession(true);
+				  session.setAttribute("orderlist",orderList);
+				  nextJSP = "/jsp/order_list.jsp";				  
+			}else{
+				  nextJSP = "/jsp/home.jsp";
+			}
+			
+		}else if("orderdetails".equalsIgnoreCase(action)){		
+			List<OrderDetail> orderDetailList = userController.getOrderDetails(request, response);
+			if(null != orderDetailList){
+	   			  request.setAttribute("orderdetaillist",orderDetailList);
+				  nextJSP = "/jsp/order_details.jsp";				  
+			}else{
+				  nextJSP = "/jsp/home.jsp";
 			}
 			
 		}else if("logout".equalsIgnoreCase(action)){		

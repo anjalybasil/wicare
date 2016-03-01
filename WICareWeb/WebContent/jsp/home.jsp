@@ -76,8 +76,9 @@
 							<!-- - - - - - - - - - - - - - Today's deals - - - - - - - - - - - - - - - - -->
 
 							<section class="section_offset animated transparent" data-animation="fadeInDown">
-
+								
 								<h3 class="widget_title" >Best Sellers</h3>
+								
 
 								<!-- - - - - - - - - - - - - - Carousel of today's deals - - - - - - - - - - - - - - - - -->
 
@@ -94,22 +95,19 @@
 											<img src="${pageContext.request.contextPath}/images/tomato.png" alt="">
 
 											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
+										
+									
 											<div class="actions_wrap">
 
 												<div class="centered_buttons">
-
-													<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-													<a href="#" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
+													
 												</div><!--/ .centered_buttons -->
 
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip right">Add to Wishlist</span></a>
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip left">Add to Compare</span></a>
-
 											</div><!--/ .actions_wrap-->
+											
+											
+										
 											
 											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
@@ -183,15 +181,9 @@
 
 												<div class="centered_buttons">
 
-													<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-													<a href="#" class="button_blue middle_btn add_to_cart">Add to Cart</a>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 												</div><!--/ .centered_buttons -->
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip right">Add to Wishlist</span></a>
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip left">Add to Compare</span></a>
 
 										  </div><!--/ .actions_wrap-->
 											
@@ -265,17 +257,11 @@
 
 											<div class="actions_wrap">
 
-												<div class="centered_buttons">
+												<div class="centered_buttons">		
 
-													<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-													<a href="#" class="button_blue middle_btn add_to_cart">Add to Cart</a>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 												</div><!--/ .centered_buttons -->
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip right">Add to Wishlist</span></a>
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip left">Add to Compare</span></a>
 
 											</div><!--/ .actions_wrap-->
 											
@@ -337,16 +323,9 @@
 
 												<div class="centered_buttons">
 
-													<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-													<a href="#" class="button_blue middle_btn add_to_cart">Add to Cart</a>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 												</div><!--/ .centered_buttons -->
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip right">Add to Wishlist</span></a>
-
-												<a href="#" class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip left">Add to Compare</span></a>
-
 											</div><!--/ .actions_wrap-->
 											
 											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
@@ -421,15 +400,9 @@
 
 												<div class="centered_buttons">
 
-													<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-													<a href="#" class="button_blue middle_btn add_to_cart">Add to Cart</a>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 												</div><!--/ .centered_buttons -->
-
-												<a href="#" class="button_dark_grey def_icon_btn middle_btn add_to_wishlist tooltip_container"><span class="tooltip right">Add to Wishlist</span></a>
-
-												<a href="#" class="button_dark_grey def_icon_btn middle_btn add_to_compare tooltip_container"><span class="tooltip left">Add to Compare</span></a>
 
 											</div><!--/ .actions_wrap-->
 											
@@ -481,12 +454,6 @@
 
 								<!-- - - - - - - - - - - - - - View all deals of the day - - - - - - - - - - - - - - - - -->
 
-								<footer class="bottom_box">
-
-									<a href="#" class="button_grey middle_btn"></a>
-
-								</footer>
-
 								<!-- - - - - - - - - - - - - - End of view all deals of the day - - - - - - - - - - - - - - - - -->
 
 							</section><!--/ .section_offset.animated.transparent-->
@@ -503,7 +470,7 @@
 
 									<li class="has_megamenu">
 
-										<a href="#">Fruits</a>
+										<a href="${pageContext.request.contextPath}/category.do?action=fruit">Fruits</a>
 
 										<!-- - - - - - - - - - - - - - Mega menu - - - - - - - - - - - - - - - - -->
 
@@ -514,7 +481,7 @@
 									</li>
 									<li class="has_megamenu">
 
-										<a href="#">Vegetables</a>
+										<a href="${pageContext.request.contextPath}/category.do?action=vegetable">Vegetables</a>
 
 										<!-- - - - - - - - - - - - - - Mega menu - - - - - - - - - - - - - - - - -->
 
@@ -525,7 +492,7 @@
 									</li>
 									<li class="has_megamenu">
 
-										<a href="#">Meat</a>
+										<a href="${pageContext.request.contextPath}/category.do?action=meat">Meat</a>
 
 										<!-- - - - - - - - - - - - - - Mega menu - - - - - - - - - - - - - - - - -->
 
@@ -536,7 +503,7 @@
 									</li>
 									<li class="has_megamenu">
 
-										<a href="#">Egg</a>
+										<a href="${pageContext.request.contextPath}/category.do?action=egg">Egg</a>
 
 										<!-- - - - - - - - - - - - - - Mega menu - - - - - - - - - - - - - - - - -->
 
@@ -551,10 +518,13 @@
                                     <li class="has_megamenu"><a href="#">Rice</a></li>
                                     <li class="has_megamenu"><a href="#">Oil</a></li>
                                     <li class="has_megamenu"><a href="#">Snacks</a></li>
-                                    <li class="has_megamenu"><a href="#">Beverage</a></li>
-									<!--<li class="has_megamenu"><a href="#">Well-being (298)</a></li>-->
-									<!--<li class="has_megamenu"><a href="#" class="all"><b>All Categories</b></a></li>-->
-
+									<li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=bread">Bread</a></li>
+									<li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=dairy">Dairy</a></li>
+                                    <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=pasta">Pasta</a></li>
+                                    <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=rice">Rice</a></li>
+                                    <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=oil">Oil</a></li>
+                                    <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=snack">Snacks</a></li>
+                                    <li class="has_megamenu"><a href="${pageContext.request.contextPath}/category.do?action=beverage">Beverage</a></li>
 								</ul>
 
 							</section><!--/ .animated.transparent-->
@@ -735,19 +705,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/spinach.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -779,11 +737,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -803,20 +757,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/mesh1.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
-
 													</div><!--/. image_wrap-->
 
 													<!-- - - - - - - - - - - - - - End thumbmnail - - - - - - - - - - - - - - - - -->
@@ -855,11 +796,10 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
+													
 
 													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
@@ -877,19 +817,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/potato.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -921,12 +849,10 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
-
+													
 													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
@@ -943,19 +869,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tomato.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -987,12 +901,10 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
-
+													
 													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
@@ -1007,7 +919,7 @@
 
 											<footer class="bottom_box">
 
-												<a href="#" class="button_grey middle_btn">View All Products</a>
+												<a href="${pageContext.request.contextPath}/category.do?action=print_all_food" class="button_grey middle_btn">View All Products</a>
 
 											</footer>
 
@@ -1031,19 +943,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_1.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1075,9 +975,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1097,19 +995,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_2.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1149,9 +1035,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1171,19 +1055,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_3.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1215,9 +1087,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1237,19 +1107,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_1.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1281,9 +1139,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1325,19 +1181,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_4.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1369,9 +1213,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1391,19 +1233,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_3.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1443,9 +1273,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1465,20 +1293,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_5.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
-
 													</div><!--/. image_wrap-->
 
 													<!-- - - - - - - - - - - - - - End thumbmnail - - - - - - - - - - - - - - - - -->
@@ -1509,9 +1324,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1531,19 +1344,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_1.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1575,9 +1376,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1619,19 +1418,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_5.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1663,12 +1450,10 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
-
+													
 													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
@@ -1685,19 +1470,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_3.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1737,9 +1510,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1759,19 +1530,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/deals_img_1.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1803,12 +1562,10 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
-
+													
 													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
@@ -1825,19 +1582,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_1.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1869,9 +1614,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1913,19 +1656,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_1.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -1957,9 +1688,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -1979,19 +1708,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_2.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -2031,9 +1748,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -2053,19 +1768,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/tabs_img_4.png" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -2097,9 +1800,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 
@@ -2119,19 +1820,7 @@
 
 														<img src="${pageContext.request.contextPath}/images/green_beens.jpg" alt="">
 
-														<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-														<div class="actions_wrap">
-
-															<div class="centered_buttons">
-
-																<a href="#" class="button_dark_grey middle_btn quick_view" data-modal-url="modals/quick_view.html">Quick View</a>
-
-															</div><!--/ .centered_buttons -->
-
-														</div><!--/ .actions_wrap-->
 														
-														<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 													</div><!--/. image_wrap-->
 
@@ -2163,9 +1852,7 @@
 
 													<div class="buttons_row">
 
-														<button class="button_blue middle_btn">Add to Cart</button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_wishlist tooltip_container"><span class="tooltip top">Add to Wishlist</span></button>
-														<button class="button_dark_grey middle_btn def_icon_btn add_to_compare tooltip_container"><span class="tooltip top">Add to Compare</span></button>
+													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
 
 													</div>
 

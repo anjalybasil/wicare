@@ -54,270 +54,7 @@
 
 		<div class="wide_layout">
 
-			<!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->
-
-		<header id="header" class="type_6">
-
-			<div class="bottom_part">
-
-					<div class="container">
-
-						<div class="row">
-
-							<div class="main_header_row">
-
-								<div class="col-sm-3">
-
-									<!-- - - - - - - - - - - - - - Logo - - - - - - - - - - - - - - - - -->
-
-									<a href="../index.html" class="logo">
-
-										<img src="../images/WIClogo2.png" alt="" width="339" height="80">
-
-									</a>
-
-									<!-- - - - - - - - - - - - - - End of logo - - - - - - - - - - - - - - - - -->
-
-								</div><!--/ [col]-->
-
-							  <div class="col-lg-6 col-md-5 col-sm-5 col-md-offset-2">
-
-									<!-- - - - - - - - - - - - - - Call to action - - - - - - - - - - - - - - - - -->
-
-									<div class="call_us">
-
-										<span></span> <b></b>
-
-									</div><!--/ .call_us-->
-
-									<!-- - - - - - - - - - - - - - End call to action - - - - - - - - - - - - - - - - -->
-
-									<!-- - - - - - - - - - - - - - Search form - - - - - - - - - - - - - - - - -->
-
-									<form class="clearfix search">
-
-										<input type="text" name="" tabindex="1" placeholder="Search..." class="alignleft">
-										
-										<!-- - - - - - - - - - - - - - Categories - - - - - - - - - - - - - - - - --><!--/ .search_category.alignleft-->
-
-										<!-- - - - - - - - - - - - - - End of categories - - - - - - - - - - - - - - - - -->
-
-									  <button class="button_blue def_icon_btn alignleft"></button>
-
-									</form><!--/ #search-->
-									
-									<!-- - - - - - - - - - - - - - End search form - - - - - - - - - - - - - - - - -->
-
-								</div><!--/ [col]-->
-
-								<div class="col-lg-3 col-sm-4">
-
-									<div class="clearfix">
-
-										
-
-								  </div><!--/ .clearfix-->
-
-									<!-- - - - - - - - - - - - - - Loginbox & Wishlist & Compare - - - - - - - - - - - - - - - - -->
-
-									<ul class="account_bar">
-
-										<li></li>
-
-										<li></li>
-
-										<li>
-
-										  <div class="login_box"><div class="login_box_inner">Welcome visitor <a href="login.html" data-modal-url="modals/login.html">Login</a> or <a href="Register_page.html">Register</a></div></div>
-
-									  </li>
-
-									</ul><!--/ .account_bar-->
-
-									<!-- - - - - - - - - - - - - - End Loginbox & Wishlist & Compare - - - - - - - - - - - - - - - - -->
-
-								</div><!--/ [col]-->
-
-							</div><!--/ .main_header_row-->
-
-						</div><!--/ .row-->
-
-					</div><!--/ .container-->
-
-				</div><!--/ .bottom_part -->
-
-				<!-- - - - - - - - - - - - - - End of bottom part - - - - - - - - - - - - - - - - -->
-
-				<!-- - - - - - - - - - - - - - Main navigation wrapper - - - - - - - - - - - - - - - - -->
-
-				<div id="main_navigation_wrap">
-
-					<div class="container">
-
-						<div class="row">
-
-							<div class="col-xs-12">
-
-								<!-- - - - - - - - - - - - - - Sticky container - - - - - - - - - - - - - - - - -->
-
-								<div class="sticky_inner type_2">
-
-									<!-- - - - - - - - - - - - - - Navigation item - - - - - - - - - - - - - - - - --><!--/ .nav_item-->
-
-									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
-
-									<!-- - - - - - - - - - - - - - Navigation item - - - - - - - - - - - - - - - - -->
-
-									<div class="nav_item">
-
-										<nav class="main_navigation">
-
-											<ul>
-
-												<li><a href="../index.html">Home</a></li>
-												<li><a href="shop_my_account.html">My Account</a></li>
-												<li><a href="shop_shopping_cart.html">Shopping Cart</a></li>
-												<li><a href="shop_checkout.html">Checkout</a></li>
-												<li></li>
-												<li><a href="Contact_us.html">Contact Us</a></li>
-											  
-
-												</li>
-
-											</ul>
-
-										</nav><!--/ .main_navigation-->
-
-									</div>
-
-									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
-
-									<!-- - - - - - - - - - - - - - Navigation item - - - - - - - - - - - - - - - - -->
-
-									<div class="nav_item size_3">
-
-										<button id="open_shopping_cart" class="open_button" data-amount="3">
-											<b class="title">My Cart</b>
-											<b class="total_price">$999.00</b>
-										</button>
-
-										<!-- - - - - - - - - - - - - - Products list - - - - - - - - - - - - - - - - -->
-
-										<div class="shopping_cart dropdown">
-
-												<div class="animated_item">
-
-													<p class="title">Recently added item(s)</p>
-
-													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
-
-													<div class="clearfix sc_product">
-
-														<a href="#" class="product_thumb"><img src="../images/sc_img_1.jpg" alt=""></a>
-
-														<a href="#" class="product_name">Natural Factors PGX Daily Ultra Matrix...</a>
-
-														<p>1 x $499.00</p>
-
-														<button class="close"></button>
-
-													</div><!--/ .clearfix.sc_product-->
-													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
-
-													<div class="clearfix sc_product">
-
-														<a href="#" class="product_thumb"><img src="../images/sc_img_2.jpg" alt=""></a>
-
-														<a href="#" class="product_name">Oral-B Glide Pro-Health Floss...</a>
-
-														<p>1 x $499.00</p>
-
-														<button class="close"></button>
-
-													</div><!--/ .clearfix.sc_product-->
-													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
-
-													<div class="clearfix sc_product">
-
-														<a href="#" class="product_thumb"><img src="../images/sc_img_3.jpg" alt=""></a>
-
-														<a href="#" class="product_name">Culturelle Kids! Probi-<br>otic Packets 30 ea</a>
-
-														<p>1 x $499.00</p>
-
-														<button class="close"></button>
-
-													</div><!--/ .clearfix.sc_product-->
-													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<!-- - - - - - - - - - - - - - Total info - - - - - - - - - - - - - - - - -->
-
-													<ul class="total_info">
-
-														<li><span class="price">Tax:</span> $0.00</li>
-
-														<li><span class="price">Discount:</span> $37.00</li>
-
-														<li class="total"><b><span class="price">Total:</span> $999.00</b></li>
-
-													</ul>
-													
-													<!-- - - - - - - - - - - - - - End of total info - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<a href="#" class="button_grey">View Cart</a>
-
-													<a href="#" class="button_blue">Checkout</a>
-
-												</div><!--/ .animated_item-->
-
-									  </div><!--/ .shopping_cart.dropdown-->
-										
-										<!-- - - - - - - - - - - - - - End of products list - - - - - - - - - - - - - - - - -->
-										
-									</div><!--/ .nav_item-->
-
-									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
-
-								</div><!--/ .sticky_inner -->
-
-								<!-- - - - - - - - - - - - - - End of sticky container - - - - - - - - - - - - - - - - -->
-
-							</div><!--/ [col]-->
-
-						</div><!--/ .row-->
-
-					</div><!--/ .container-->
-
-				</div><!--/ .main_navigation_wrap-->
-
-				<!-- - - - - - - - - - - - - - End of main navigation wrapper - - - - - - - - - - - - - - - - -->
-
-			</header>
-			
-			<!-- - - - - - - - - - - - - - End Header - - - - - - - - - - - - - - - - -->
+		<jsp:include page="/inc/header.jsp" />
 
 			<!-- - - - - - - - - - - - - - Page Wrapper - - - - - - - - - - - - - - - - -->
 
@@ -357,16 +94,14 @@
 								</thead>
 
 								<tbody>
-								<c:forEach var="food" items="${sessionScope.user.currentOrder}" varStatus="i">	
-									<c:if test="${i.index mod 4 eq 0}">
+								<c:forEach var="currentOrder" items="${sessionScope.user.currentOrder.products}" varStatus="i">	
 	      								<tr>
-	  								 </c:if>
 
 										<!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
 											
 										<td class="product_image_col" data-title="Product Image">
 											
-											<img src="/WICareWeb/images/${sessionScope.user.currentOrder.getProducts().get(0).imgFile}" height="50" width="50">
+											<img src="/WICareWeb/images/groceries/${currentOrder.imgFile}" height="50" width="50">
 
 										</td>
 
@@ -376,7 +111,7 @@
 
 										<td data-title="Product Name">
 
-											<c:out value='${sessionScope.user.currentOrder.getProducts().get(0).foodName}' />
+											<c:out value='${currentOrder.foodName}' />
 
 										</td>
 
@@ -386,7 +121,7 @@
 
 										<td class="subtotal" data-title="Price">
 											
-											$5.99
+											<c:out value='${currentOrder.foodPrice}' />
 
 										</td>
 
@@ -399,7 +134,7 @@
 											<div class="qty min clearfix">
 
 												<button class="theme_button" data-direction="minus">&#45;</button>
-												<input type="text" name="" value='${sessionScope.user.currentOrder.getProducts().get(0).foodAmount}' />>
+												<input type="text" name="" value='${currentOrder.foodAmount}' />
 												<button class="theme_button" data-direction="plus">&#43;</button>
 
 											</div><!--/ .qty.min.clearfix-->
@@ -411,16 +146,14 @@
 										<!-- - - - - - - - - - - - - - Total - - - - - - - - - - - - - - - - -->
 
 										<td class="total" data-title="Total">
-<c:out value='${sessionScope.user.currentOrder.getProducts().get(i).foodAmount * sessionScope.user.currentOrder.getProducts().get(i).food}'/>
+											<c:out value='${currentOrder.foodPrice * currentOrder.foodAmount}' />
 										</td>
 
 										<!-- - - - - - - - - - - - - - End of total - - - - - - - - - - - - - - - - -->
 
 										
 								
-								<c:if test="${(i.index+1) mod 4 eq 0 or i.last}">
 	        						</tr>
-	    						</c:if>
 	    				</c:forEach>
 						</tbody>
 						</table> 
@@ -431,7 +164,7 @@
 
 							<div class="left_side">
 
-								<a href="#" class="button_blue middle_btn">Continue Shopping</a>
+								<a href="shoppingcart.do?action=print_all_food" class="button_blue middle_btn">Continue Shopping</a>
 
 							</div>
 
@@ -451,44 +184,6 @@
 
 						<div class="row">
 
-							<section class="col-sm-4">
-
-								<h3>Discount Codes</h3>
-
-								<div class="theme_box">
-
-									<p class="form_caption">Enter your coupon code if you have one.</p>
-
-									<form id="discount_code">
-
-										<ul>
-
-											<li class="row">
-
-												<div class="col-xs-12">
-
-													<input type="text" name="">
-
-												</div>
-
-											</li>
-
-										</ul>
-
-									</form>
-
-								</div><!--/ .theme_box -->
-
-								<footer class="bottom_box">
-
-									<button type="submit" form="discount_code" class="button_grey middle_btn">Apply Coupon</button>
-
-								</footer>
-
-							</section><!--/ [col] --><!--/ [col] -->
-
-							<section class="col-sm-4">
-
 								<h3>Total</h3>
 
 								<div class="table_wrap">
@@ -500,14 +195,14 @@
 											<tr>
 													
 												<td>Subtotal</td>
-								<td><c:out value='${(sessionScope.user.currentOrder.total + 100)}' /></td>
+								<td><c:out value='${(sessionScope.user.currentOrder.subTotal)}' /></td>
 
 											</tr>
 
 											<tr class="total">
 													
 												<td>Total</td>
-									<td><c:out value='${sessionScope.user.currentOrder.total * 1.05}' /></td>
+									<td><c:out value='${sessionScope.user.currentOrder.total * 1.03}' /></td>
 
 											</tr>
 

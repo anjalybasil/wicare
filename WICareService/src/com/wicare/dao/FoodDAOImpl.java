@@ -239,6 +239,8 @@ public class FoodDAOImpl implements FoodDAO
 	@Override
 	public List<FoodProduct> getFoodByName(String name) 
 	{
+		//SELECT * FROM `wicare`.wi_product WHERE product_name LIKE "%name%"
+		
 		
 		return null;
 	}

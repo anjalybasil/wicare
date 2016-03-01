@@ -1,3 +1,10 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<!DOCTYPE html>
+<html lang="en">
+
 <footer id="footer">
 
 				<div class="container">
@@ -131,8 +138,8 @@
 							</div><!--/ [col]-->
 
 						  <!--/ [col]-->
-
-							<div class="col-sm-6 col-md-3">
+						<c:if test="${sessionScope.hasLoggedIn != null and  sessionScope.hasLoggedIn}">
+							<div class="col-sm-6 col-md-3" >
 
 								<!-- - - - - - - - - - - - - - My account widget - - - - - - - - - - - - - - - - -->
 
@@ -152,7 +159,8 @@
 
 								<!-- - - - - - - - - - - - - - End my account widget - - - - - - - - - - - - - - - - -->
 
-						  </div>
+						   </div>
+						 </c:if>
 
 							<div class="col-md-3 col-sm-6">
 
@@ -184,14 +192,14 @@
 
 						<ul class="payments">
 
-							<li><img src="images/payment_1.png" alt=""></li>
-							<li><img src="images/payment_2.png" alt=""></li>
-							<li><img src="images/payment_3.png" alt=""></li>
-							<li><img src="images/payment_4.png" alt=""></li>
-							<li><img src="images/payment_5.png" alt=""></li>
-							<li><img src="images/payment_6.png" alt=""></li>
-							<li><img src="images/payment_7.png" alt=""></li>
-							<li><img src="images/payment_8.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_1.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_2.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_3.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_4.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_5.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_6.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_7.png" alt=""></li>
+							<li><img src="${pageContext.request.contextPath}/images/payment_8.png" alt=""></li>
 
 						</ul>
 						
@@ -203,7 +211,7 @@
 
 							<ul class="bottombar">
 
-								<li><a href="#">Home</a></li>
+								<li><a href="${pageContext.request.contextPath}/jsp/home.jsp">Home</a></li>
 								<li><a href="#">About us</a></li>
 								<li><a href="#">Contact us</a></li>
 								<li><a href="#">Privacy Policy</a></li>
@@ -226,3 +234,19 @@
 			</footer>
 			
 			<!-- - - - - - - - - - - - - - End Footer - - - - - - - - - - - - - - - - -->
+			<!-- Include Libs & Plugins
+		============================================ -->
+		<script src="${pageContext.request.contextPath}/js/jquery-2.1.1.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/queryloader2.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jquery.appear.js"></script>
+		<script src="${pageContext.request.contextPath}/js/owlcarousel/owl.carousel.min.js"></script>		
+		<script src="${pageContext.request.contextPath}/js/arcticmodal/jquery.arcticmodal.js"></script>
+		<script src="${pageContext.request.contextPath}/js/colorpicker/colorpicker.js"></script>
+		<script src="${pageContext.request.contextPath}/js/retina.min.js"></script>
+		<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
+
+		<!-- Theme files
+		============================================ -->
+		<script src="${pageContext.request.contextPath}/js/theme.plugins.js"></script>
+		<script src="${pageContext.request.contextPath}/js/theme.core.js"></script>
+	</html>

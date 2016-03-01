@@ -150,7 +150,7 @@
 
 										<div class="image_wrap">
 
-											<img src="${pageContext.request.contextPath}/images/${food.imgFile}" height="50" width="50">
+											<img src="${pageContext.request.contextPath}/images/groceries/${food.imgFile}" height="200" width="200">
 
 											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
 		<!--  Here's where I need to pass the FoodProduct as a parameter if possible, but I Can't figure out how. -->
@@ -158,7 +158,7 @@
 
 												<div class="centered_buttons">
 
-												<form action="${pageContext.request.contextPath}/WICareWeb/shoppingcart.do" name="shoppingcartform">
+												<form action="${pageContext.request.contextPath}/shoppingcart.do" name="shoppingcartform">
 													<input type="hidden" name="product" value="${food.foodID }">
 													<input type="hidden" name="action" value="add_to_cart">
 													<input type="submit" class="button_blue middle_btn add_to_cart" value="Add to Cart">

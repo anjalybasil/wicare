@@ -17,6 +17,16 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j
 			<session-type>Stateless</session-type>
 			<transaction-type>Bean</transaction-type>
 		</session>
+		
+		<session>
+			<display-name>Shopping Bean</display-name>
+			<ejb-name>ShoppingBean</ejb-name>
+			<home>com.wicare.ejb.shopping.ShoppingHome</home>
+			<remote>com.wicare.ejb.shopping.ShoppingObject</remote>
+			<ejb-class>com.wicare.ejb.shopping.ShoppingBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session>
 	
 	</enterprise-beans>
 	

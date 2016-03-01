@@ -17,28 +17,61 @@ import com.wicare.service.FoodServiceImpl;
 public class ShoppingCartController 
 {
 	FoodService fs = new FoodServiceImpl();
-	final String BACK_TO_PAGE = "/jsp/category_page.jsp";
+	final String BACK_TO_PAGE = "category.do?action=print_all_food";
 	String forwardView;
 	String action;
 	
 	public void addToCart(HttpServletRequest request, HttpServletResponse response) throws RemoteException
 	{
 		action = request.getParameter("action");
+		
 		forwardView = BACK_TO_PAGE;
 		User user = (User) request.getSession().getAttribute("user");
-		int foodID = (Integer) request.getAttribute("product");
+		System.out.println("" + user);
+		int foodID = Integer.valueOf(request.getParameter("product"));
+		System.out.println("Product ID" + foodID);
 		FoodProduct food = fs.getFoodByID(foodID).get(0);
+		food.setFoodAmount(1);
+		System.out.println("Food Object" + food);
 		ShoppingCart f = null;
-		if(user.getCurrentOrder().getProducts().isEmpty())
+		if(user != null)
 		{
-			f = new ShoppingCart();
+			if(user.getCurrentOrder() == null || user.getCurrentOrder().getProducts().isEmpty())
+			{
+				f = new ShoppingCart();
+			}
+			else
+			{
+				f = user.getCurrentOrder();
+			}
 		}
 		else
 		{
-			f = user.getCurrentOrder();
+			forwardView = "/jsp/login.jsp";
 		}
-		f.addProduct(food);
+		
+		int count = 0;
+		//Loops through the currentOrder and determines if the food is in there by comparing ID's
+		for(int i = 0; i < f.getProducts().size(); i++)
+		{
+			
+			if(f.getProducts().get(i).getFoodID() == food.getFoodID())
+			{
+				count++;
+				f.getProducts().get(i).setFoodAmount(f.getProducts().get(i).getFoodAmount() + 1);
+			}
+
+		}
+		//Checks to see if count was ever incremented
+		if(count == 0)
+		{
+			f.addProduct(food);			
+		}
 		user.setCurrentOrder(f);
+		for(int i =0; i < user.getCurrentOrder().getProducts().size(); i++)
+		{
+			System.out.println("Current Order" + user.getCurrentOrder().getProducts().get(i).toString());	
+		}
 
 	//	System.out.println(request.getAttribute("product").toString());
 	//	System.out.println(request.getSession().getAttribute("user").toString());

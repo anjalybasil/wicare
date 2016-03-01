@@ -12,6 +12,7 @@ import com.wicare.dao.OrderDAO;
 import com.wicare.dao.OrderDAOImpl;
 import com.wicare.dto.FoodProduct;
 import com.wicare.dto.Order;
+import com.wicare.dto.OrderDetail;
 import com.wicare.dto.ShoppingCart;
 import com.wicare.exception.CustomException;
 import com.wicare.exception.StatusCode;
@@ -45,5 +46,9 @@ public class OrderServiceImpl implements OrderService
 		return orderDAO.getAllOrders();
 	}
 
+	
+	public List<OrderDetail> getOrderDetails(int orderId) throws CustomException{
+		return orderDAO.getOrderDetails(orderId);
+	}
 	
 }

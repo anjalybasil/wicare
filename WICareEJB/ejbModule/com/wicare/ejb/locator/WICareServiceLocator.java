@@ -18,6 +18,7 @@ import javax.rmi.PortableRemoteObject;
 import javax.sql.DataSource;
 
 import com.wicare.ejb.login.UserHome;
+import com.wicare.ejb.shopping.ShoppingHome;
 
 public class WICareServiceLocator {
 
@@ -54,7 +55,7 @@ public class WICareServiceLocator {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public UserHome getRemoteHHome(String jndiHomeName, Class homeClassName) throws ServiceException {
+	public UserHome getRemoteHome(String jndiHomeName, Class homeClassName) throws ServiceException {
 
 		UserHome remoteHome = null;
 
@@ -65,6 +66,27 @@ public class WICareServiceLocator {
 				Object object = initialContext.lookup(jndiHomeName);
 				Object objHome = PortableRemoteObject.narrow(object, homeClassName);
 				remoteHome = (UserHome) objHome;
+				cache.put(jndiHomeName, remoteHome);
+			} catch (NamingException e) {
+				e.printStackTrace();
+				throw new ServiceException("Error getting EmployeeHome" + jndiHomeName);
+			}
+		}
+		return remoteHome;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public ShoppingHome getRemoteShoppingHome(String jndiHomeName, Class homeClassName) throws ServiceException {
+
+		ShoppingHome remoteHome = null;
+
+		if (cache.containsKey(jndiHomeName)) {
+			remoteHome = (ShoppingHome) cache.get(jndiHomeName);
+		} else {
+			try {
+				Object object = initialContext.lookup(jndiHomeName);
+				Object objHome = PortableRemoteObject.narrow(object, homeClassName);
+				remoteHome = (ShoppingHome) objHome;
 				cache.put(jndiHomeName, remoteHome);
 			} catch (NamingException e) {
 				e.printStackTrace();

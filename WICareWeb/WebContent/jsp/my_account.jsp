@@ -204,9 +204,8 @@
 									<li><a href="#">Account Information</a></li>
 									
 									
-									<li><a href="#">My Orders</a></li>
-	<!-- 								<li><a href="url_to_delete" onclick="return confirm('Are you sure you want to delete your Account?')">Delete Account</a></li>
- -->									
+									<li><a href="${pageContext.request.contextPath}/user.do?action=myorders">My Orders</a></li>
+								
 
 								</ul>
 

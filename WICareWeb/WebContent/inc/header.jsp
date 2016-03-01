@@ -173,7 +173,7 @@ function submitThisForm(f) {
 													
 													
 													
-													<li><a href="shop_shopping_cart.html">Shopping Cart</a></li>
+													<li><a href="${pageContext.request.contextPath}/jsp/shop_shopping_cart.jsp">Shopping Cart</a></li>
 													<li><a href="shop_checkout.html">Checkout</a></li>
 													
 												</c:if>
@@ -192,7 +192,7 @@ function submitThisForm(f) {
 									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
 
 									<!-- - - - - - - - - - - - - - Navigation item - - - - - - - - - - - - - - - - -->
-
+									<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
 									<div class="nav_item size_3">
 
 										<button id="open_shopping_cart" class="open_button" data-amount="3" >
@@ -298,6 +298,7 @@ function submitThisForm(f) {
 										<!-- - - - - - - - - - - - - - End of products list - - - - - - - - - - - - - - - - -->
 										
 									</div><!--/ .nav_item-->
+									</c:if>
 
 									<!-- - - - - - - - - - - - - - End of navigation item - - - - - - - - - - - - - - - - -->
 

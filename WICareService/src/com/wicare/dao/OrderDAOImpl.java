@@ -10,6 +10,7 @@ import java.util.List;
 import com.wicare.dao.ConnectionManager;
 import com.wicare.dto.FoodProduct;
 import com.wicare.dto.Order;
+import com.wicare.dto.OrderDetail;
 import com.wicare.exception.CustomException;
 import com.wicare.exception.StatusCode;
 
@@ -175,5 +176,60 @@ public class OrderDAOImpl implements OrderDAO
 		return orderList;
 	}
 
+	
+	public List<OrderDetail> getOrderDetails(int orderId) throws CustomException{
+		
+		{
+			ResultSet resultSet = null;
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			String query = "SELECT a.order_id, a.product_price, a.product_quantity, b.product_name "
+					+ " FROM wi_order_details a join wi_product b on b.product_id = a.product_id "
+					+ " where a.order_id = ?";
+			try
+			{
+				con =  ConnectionManager.getConnectionFromDataSource();
+				pstmt = con.prepareStatement(query);
+				pstmt.setInt(1, orderId);
+				resultSet =  ConnectionManager.executeQuery(pstmt);
+			}
+			catch(SQLException e)	{e.printStackTrace();}
+			catch(CustomException e){e.printStackTrace();}
+			List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
+			
+			if(resultSet == null)
+			{
+				return orderDetailList;
+			}
+			
+			
+			
+			try
+			{
+				while(resultSet.next())
+				{
+					OrderDetail o = new OrderDetail();
+					o.setOrderID(resultSet.getInt("order_id"));
+					o.setProductPrice(resultSet.getDouble("product_price"));
+					o.setProductQuantity(resultSet.getInt("product_quantity"));
+					o.setProductName(resultSet.getString("product_name"));
+					orderDetailList.add(o);
+				}
+			}
+			catch(SQLException e){
+				System.out.println("Error Message: " + e);}
+			finally
+			{
+				try
+				{
+					con.close();
+				}
+				catch(Exception e){e.printStackTrace();}
+			}
+			return orderDetailList;
+		}
+		
+		
+	}
 	
 }

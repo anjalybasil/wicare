@@ -29,7 +29,7 @@ public class ShoppingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		String nextJSP = null;
-		
+		System.out.println("Action in ShoppingServlet: " + action);
 		if(action.equalsIgnoreCase("vegetable")|| action.equalsIgnoreCase("fruit") 	|| 
 				action.equalsIgnoreCase("meat") 	|| action.equalsIgnoreCase("egg") 		|| 
 				action.equalsIgnoreCase("dairy") 	|| action.equalsIgnoreCase("bread") 	|| 
@@ -51,11 +51,12 @@ public class ShoppingServlet extends HttpServlet {
 		}
 		else if(action.equalsIgnoreCase("add_to_cart"))
 		{
+			System.out.println("Inside add_to_cart calling ShoppingCartController");
 			cartController.addToCart(request, response);			
 		}
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-		dispatcher.forward(request, response);
+		//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+		//dispatcher.forward(request, response);
 	}
 
 	/**

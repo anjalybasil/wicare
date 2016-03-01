@@ -16,4 +16,6 @@ public interface UserObject extends EJBObject {
 	public User addUser(User user)throws CustomException,RemoteException;
 	
 	public User updateUser(User user) throws CustomException,RemoteException;
+	
+	
 }
