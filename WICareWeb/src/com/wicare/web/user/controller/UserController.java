@@ -1,5 +1,6 @@
 package com.wicare.web.user.controller;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import com.wicare.dto.Address;
@@ -18,13 +18,14 @@ import com.wicare.dto.User;
 import com.wicare.ejb.locator.EmployeeResourceException;
 import com.wicare.ejb.locator.ShoppingDelegate;
 import com.wicare.ejb.locator.UserDelegate;
+import com.wicare.exception.CustomException;
 import com.wicare.web.util.EncryptionUtil;
 
 public class UserController {
 	
 	public static Logger logger = Logger.getLogger(UserController.class);
 	
-	public User register(HttpServletRequest request, HttpServletResponse response){
+	public User register(HttpServletRequest request, HttpServletResponse response) throws CustomException{
 		
 		User user = new User();
 		user.setFirstName(request.getParameter("firstName"));
@@ -34,7 +35,6 @@ public class UserController {
 		EncryptionUtil  encryptionUtil = new EncryptionUtil();
 		user.setPassword(encryptionUtil.encodeBase64(request.getParameter("password")));		
 		user.setWicAcctNo(request.getParameter("wicacctno"));
-		System.out.println("IsWic" +request.getParameter("iswic"));
 		user.setWIC(Boolean.parseBoolean(request.getParameter("iswic")));
 		
 		Address address = new Address();
@@ -50,22 +50,14 @@ public class UserController {
 		
 		user.getAddressList().add(address);
 		
-		UserDelegate userDelegate = null;
-		try {
-			userDelegate = new UserDelegate();
-			user = userDelegate.addUser(user);
-			return user;
-		} catch (EmployeeResourceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
+		UserDelegate userDelegate = getUserDelegate();
+		user = userDelegate.addUser(user);
+		return user;
 		
 		
 	}
 	
-	public User validateUser(HttpServletRequest request, HttpServletResponse response) {
+	public User validateUser(HttpServletRequest request, HttpServletResponse response) throws CustomException {
 		
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -76,7 +68,7 @@ public class UserController {
 	}
 	
 	
-  public User updateUser(HttpServletRequest request, HttpServletResponse response){
+  public User updateUser(HttpServletRequest request, HttpServletResponse response) throws CustomException{
 		
 		
 		
@@ -113,20 +105,16 @@ public class UserController {
 	}
   
   
-  public List<Order> getOrdersByUser(HttpServletRequest request, HttpServletResponse response){
+  public List<Order> getOrdersByUser(HttpServletRequest request, HttpServletResponse response) throws CustomException{
 	 
 	  HttpSession session = request.getSession(false);
 	
 	  int userID = ((User)session.getAttribute("user")).getUserid();
 	  logger.info("userID" + userID);
 	  
-	  
-	  // TODO : Call Delegate.getOrdersByUser
-	  
 	  ShoppingDelegate shoppingDelegate = getShoppingDelegate();
 	  List<Order> orderList  = shoppingDelegate.getOrdersByUser(userID);
 	  
-	  System.out.println("OrderList" + orderList);
 	  
 	  Order order = null;
 	  orderList = new ArrayList<Order>();
@@ -146,7 +134,7 @@ public class UserController {
   }
   
   
-  public List<OrderDetail> getOrderDetails(HttpServletRequest request, HttpServletResponse response){
+  public List<OrderDetail> getOrderDetails(HttpServletRequest request, HttpServletResponse response) throws CustomException{
 		 
 	
 	  int orderId = Integer.parseInt(request.getParameter("orderID"));
@@ -180,31 +168,25 @@ public class UserController {
   }
 	
 	
-	private UserDelegate getUserDelegate(){
-		UserDelegate userDelegate = null;
-		try {
-			userDelegate = new UserDelegate();
-			return userDelegate;
-		} catch (EmployeeResourceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private UserDelegate getUserDelegate() throws CustomException{
+		UserDelegate userDelegate = new UserDelegate();
+		return userDelegate;
 		
-		return null;
+		
 	}
 	
 	
-	private ShoppingDelegate getShoppingDelegate(){
+	private ShoppingDelegate getShoppingDelegate() throws CustomException{
 		ShoppingDelegate shoppingDelegate = null;
 		try {
 			shoppingDelegate = new ShoppingDelegate();
 			return shoppingDelegate;
-		} catch (EmployeeResourceException e) {
-			// TODO Auto-generated catch block
+		}catch (Exception e) {
 			e.printStackTrace();
+			logger.error("Error occured during getShoppingDelegate !", e);
+			throw new CustomException("Error occured during getShoppingDelegate !", e);
 		}
 		
-		return null;
 	}
 
 }

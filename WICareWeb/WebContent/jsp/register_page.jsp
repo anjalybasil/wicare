@@ -51,11 +51,11 @@
 	   
 	    function validateForm(){
     	
-		   var firstName = document.getElementById("first_name");			  
+		  var firstName = document.getElementById("first_name");			  
 		   if(firstName.value == null || firstName.value == "") {
 		  		alert("First Name is required...");
 		  		return false;
-		  	}
+		  	} 
 		   
 		   var lastName = document.getElementById("last_name");			  
 		   if(lastName.value == null || lastName.value == "") {
@@ -174,10 +174,16 @@
 
 						<h3>&nbsp;</h3>
 
+  						<div align="center" style="color: #FF0000;">${errorMessage}</div>
+  									
+  								
+						  		
+						  		
+  									
 						<div class="theme_box">
+											
 
-
-							<form class="type_2" action="${pageContext.request.contextPath}/register.do" method="post" id="register" onsubmit="return validateForm();">
+							<form class="type_2" action="${pageContext.request.contextPath}/register.do" method="post" id="register" >
 								 <input type="hidden" id="action" name="action" value="register">
 								<ul>
 									
@@ -186,14 +192,14 @@
 										<div class="col-sm-6">
 											
 											<label for="first_name" class="required">First Name</label>
-											<input type="text"  id="first_name" name = "firstName">
+											<input type="text"  id="first_name" name = "firstName" value="${requestScope.user.firstName}" >
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 											
 											<label for="last_name" class="required">Last Name</label>
-											<input type="text" id="last_name" name="lastName">
+											<input type="text" id="last_name" name="lastName" value="${requestScope.user.lastName}" >
 
 										</div><!--/ [col] -->
 
@@ -204,14 +210,14 @@
 										<div class="col-sm-6">
 											
 											<label for="company_name">Middle Name</label>
-											<input type="text"  id="middle_name" name ="middleName">
+											<input type="text"  id="middle_name" name ="middleName" value="${requestScope.user.middleName}" >
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 											
 											<label for="email_address" class="required">Email Address</label>
-											<input type="text"  id="email" name="email">
+											<input type="text"  id="email" name="email" value="${requestScope.user.email}">
 
 										</div><!--/ [col] -->
 
@@ -222,7 +228,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 1</label>
-											<input type="text"  id="addressline1" name ="addressline1" >
+											<input type="text"  id="addressline1" name ="addressline1" value="${requestScope.user.addressList[0].addressLine1}" >
 
 										</div><!--/ [col] -->
 
@@ -233,7 +239,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 2</label>
-                                          <input type="text"  id="addressline2" name ="addressline2">
+                                          <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}">
 
 										</div><!--/ [col] -->
 
@@ -244,7 +250,7 @@
 										<div class="col-sm-6">
 											
 											<label for="city" class="required">City</label>
-											<input type="text"  id="city" name="city">
+											<input type="text"  id="city" name="city" value="${requestScope.user.addressList[0].city}" >
 
 										</div><!--/ [col] -->
 
@@ -252,7 +258,7 @@
 
 											<label class="required">State/Province</label>
 
-											<input type="text"  id="state" name="state">
+											<input type="text"  id="state" name="state" value="${requestScope.user.addressList[0].state}">
 
 										</div><!--/ [col] -->
 
@@ -263,7 +269,7 @@
 										<div class="col-sm-6">
 
 											<label for="postal_code" class="required">Zip/Postal Code</label>
-											<input type="text"  id="zip" name="zip">
+											<input type="text"  id="zip" name="zip" value="${requestScope.user.addressList[0].zip}">
 
 										</div><!--/ [col] -->
 
@@ -291,7 +297,7 @@
 										<div class="col-sm-6">
 
 											<label for="telephone" class="required">Telephone</label>
-											<input type="text"  id="phoneNo" name="phoneNo">
+											<input type="text"  id="phoneNo" name="phoneNo" value="${requestScope.user.addressList[0].phoneNo}">
 
 										</div><!--/ [col] -->
 
@@ -319,7 +325,7 @@
 									<li class="row">
 
 									  <div class="col-xs-6">
-										<input type="radio" id="radio_1" name="iswic" value="true">
+										<input type="radio" id="radio_1" name="iswic" value="true" <c:if test="${requestScope.user.WIC eq true}">CHECKED</c:if> >
 										<label for="radio_1">WIC Member</label>
 									  </div><!--/ [col] -->
 
@@ -328,7 +334,7 @@
 									<li class="row">
 
 									  <div class="col-xs-6">
-											<input type="radio" name="iswic" id="radio_2" value ="false" checked="checked">
+											<input type="radio" name="iswic" id="radio_2" value ="false" <c:if test="${requestScope.user.WIC eq false or requestScope.user == null }">CHECKED</c:if> >
 											<label for="radio_2">Non-WIC Member</label>
 
 									  </div>
@@ -336,7 +342,7 @@
 									<li class="row">
 									  <div class="col-sm-6">
 									    <label for="fax4">WIC Account #</label>
-									    <input type="text" name="wicacctno" id="wicacctno" >
+									    <input type="text" name="wicacctno" id="wicacctno" value="${requestScope.user.wicAcctNo}">
 								      </div>
 									</li>
 									<li class="row"> </li>

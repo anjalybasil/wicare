@@ -14,6 +14,23 @@ public class CustomException extends Exception {
 		this.exception = exception;
 		this.status = status;
 	}
+	
+	/**
+	 * @param message
+	 */
+	public CustomException(String message) {
+		super(message);
+	}
+	
+	/**
+	 * @param ex
+	 * @param message
+	 */
+	public CustomException(String message, Throwable ex) {
+		super(message, ex);
+		
+	}	
+	
 
 	public Throwable getException() {
 		return exception;

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User  implements Serializable 
+public class User  implements Serializable, Cloneable 
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -159,7 +159,9 @@ public class User  implements Serializable
 	/**
 	 * @param currentOrder the currentOrder to set
 	 */
-	   
+	public Object clone()throws CloneNotSupportedException{  
+		return super.clone();  
+		}   
 
     
 

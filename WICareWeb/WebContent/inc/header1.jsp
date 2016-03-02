@@ -94,9 +94,10 @@ function submitThisForm(f) {
 
 									<!-- - - - - - - - - - - - - - Search form - - - - - - - - - - - - - - - - -->
 
-									<form class="clearfix search">
+									<form class="clearfix search" action="${pageContext.request.contextPath}/category.do">
 
-										<input type="text" name="" tabindex="1" placeholder="Search..." class="alignleft">
+										<input type="text" name="search_term" tabindex="1" placeholder="Search..." class="alignleft">
+										<input type="hidden" name="action" value="search">
 										
 										<!-- - - - - - - - - - - - - - Categories - - - - - - - - - - - - - - - - --><!--/ .search_category.alignleft-->
 
@@ -231,9 +232,9 @@ function submitThisForm(f) {
 									<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
 									<div class="nav_item size_3">
 
-										<button id="open_shopping_cart" class="open_button" data-amount="3" >
+										<button id="open_shopping_cart" class="open_button" data-amount="${sessionScope.user.currentOrder.products.size()}" >
 											<b class="title">My Cart</b>
-											<b class="total_price">$999.00</b>
+											<b class="total_price">${sessionScope.user.currentOrder.subTotal}</b>
 											
 										</button>
 
@@ -247,60 +248,22 @@ function submitThisForm(f) {
 
 													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
 
+													<c:forEach var="food" items="${sessionScope.user.currentOrder.products}" varStatus="i">
 													<div class="clearfix sc_product">
 
-														<a href="#" class="product_thumb"><img src="images/sc_img_1.jpg" alt=""></a>
 
-														<a href="#" class="product_name">Natural Factors PGX Daily Ultra Matrix...</a>
+														<a href="#" class="product_thumb"><img src="/WICareWeb/images/groceries/${food.imgFile}" height="50" width="50"></a>
+																																										
+														<a href="#" class="product_name">${food.foodName}</a>
 
-														<p>1 x $499.00</p>
+														<p>${food.foodAmount} x ${food.foodPrice * food.foodAmount}</p>
 
-														<button class="close"></button>
+														<button class="close"></button><!-- remove delete (make this remove from the shopping cart) -->
 
 													</div><!--/ .clearfix.sc_product-->
 													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
-
-													<div class="clearfix sc_product">
-
-														<a href="#" class="product_thumb"><img src="images/sc_img_2.jpg" alt=""></a>
-
-														<a href="#" class="product_name">Oral-B Glide Pro-Health Floss...</a>
-
-														<p>1 x $499.00</p>
-
-														<button class="close"></button>
-
-													</div><!--/ .clearfix.sc_product-->
+													</c:forEach>
 													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
-												</div><!--/ .animated_item-->
-
-												<div class="animated_item">
-
-													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
-
-													<div class="clearfix sc_product">
-
-														<a href="#" class="product_thumb"><img src="images/sc_img_3.jpg" alt=""></a>
-
-														<a href="#" class="product_name">Culturelle Kids! Probi-<br>otic Packets 30 ea</a>
-
-														<p>1 x $499.00</p>
-
-														<button class="close"></button>
-
-													</div><!--/ .clearfix.sc_product-->
-													
-													<!-- - - - - - - - - - - - - - End of product - - - - - - - - - - - - - - - - -->
-
 												</div><!--/ .animated_item-->
 
 												<div class="animated_item">
@@ -309,11 +272,11 @@ function submitThisForm(f) {
 
 													<ul class="total_info">
 
-														<li><span class="price">Tax:</span> $0.00</li>
+														<li><span class="price">Tax:</span> 2%</li>
 
-														<li><span class="price">Discount:</span> $37.00</li>
+														<li><span class="price">Discount:</span> $0.00</li>
 
-														<li class="total"><b><span class="price">Total:</span> $999.00</b></li>
+														<li class="total"><b><span class="price">Total:</span> ${sessionScope.user.currentOrder.total}</b></li>
 
 													</ul>
 													
@@ -323,9 +286,9 @@ function submitThisForm(f) {
 
 												<div class="animated_item">
 
-													<a href="#" class="button_grey">View Cart</a>
+													<a href="${pageContext.request.contextPath}/jsp/shop_shopping_cart.jsp" class="button_grey">View Cart</a>
 
-													<a href="#" class="button_blue">Checkout</a>
+													<a href="${pageContext.request.contextPath}/jsp/shop_checkout.jsp" class="button_blue">Checkout</a>
 
 												</div><!--/ .animated_item-->
 

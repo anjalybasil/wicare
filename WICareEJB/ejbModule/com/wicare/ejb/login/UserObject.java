@@ -9,13 +9,13 @@ import com.wicare.exception.CustomException;
 
 public interface UserObject extends EJBObject {
 	
-	public User validateUser(String userName, String password) throws CustomException,RemoteException;
+	public User validateUser(String userName, String password) throws CustomException, RemoteException;
 
-	public User searchUser(int id) throws CustomException,RemoteException;
+	public User searchUser(int id) throws CustomException, RemoteException;
 
-	public User addUser(User user)throws CustomException,RemoteException;
+	public User addUser(User user)throws CustomException, RemoteException;
 	
-	public User updateUser(User user) throws CustomException,RemoteException;
+	public User updateUser(User user) throws CustomException, RemoteException;
 	
 	
 }

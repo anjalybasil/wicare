@@ -2,7 +2,7 @@ package com.wicare.dto;
 
 import java.io.Serializable;
 
-public class Address implements Serializable {
+public class Address implements Serializable, Cloneable {
 	
 	/**
 	 * 
@@ -87,5 +87,9 @@ public class Address implements Serializable {
 				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", zip=" + zip
 				+ ", phoneNo=" + phoneNo + ", userId=" + userId + "]";
 	}
+	
+	public Object clone()throws CloneNotSupportedException{  
+		return super.clone();  
+		}  
 
 }

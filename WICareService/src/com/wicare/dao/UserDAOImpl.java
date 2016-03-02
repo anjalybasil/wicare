@@ -5,12 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.wicare.dto.Address;
 import com.wicare.dto.User;
 import com.wicare.exception.CustomException;
-import com.wicare.exception.StatusCode;
 
 public class UserDAOImpl implements UserDAO {
+	
+	public static Logger logger = Logger.getLogger(UserDAOImpl.class);
 	
 	
 	public static final String SAVE_USER_ADDRESS = "INSERT INTO wi_address(address_type, address_line1, address_line2, city," +
@@ -44,11 +47,8 @@ public class UserDAOImpl implements UserDAO {
 					pstmt.setString(2, password);
 					
 					rs = ConnectionManager.executeQuery(pstmt);
-					
-					
 
 					while (rs.next()) {
-						
 						user = new User();
 						user.setUserid(rs.getInt("user_id"));
 						user.setFirstName(rs.getString("first_name"));
@@ -65,24 +65,21 @@ public class UserDAOImpl implements UserDAO {
 						}
 						user.setPassword(rs.getString("password"));					
 						
-
 						break;
 
 					}
 					
-					
-					
 
 				} catch (Exception e) {
-					System.out.println("Error occured during database operation!");
-					e.printStackTrace();
+					logger.error("Error occured during validateUser !", e);
+					throw new CustomException("Error occured during validateUser !", e);
 				} finally {
 					try {
 						rs.close();
 						conn.close();
 						pstmt.close();
 					} catch (SQLException e) {
-						
+						logger.error("Error occured during validateUser !", e);
 						e.printStackTrace();
 					}
 				}
@@ -115,23 +112,27 @@ public class UserDAOImpl implements UserDAO {
 			pstmt.setString		(4, user.getEmail());
 			pstmt.setBoolean	(5, user.isWIC());
 			pstmt.setString		(6, user.getWicAcctNo());
-			if(user.isAdmin())	{pstmt.setString(7, "admin");}
-							else{pstmt.setString(7, "user");}
+			if(user.isAdmin()){
+				pstmt.setString(7, "admin");
+			}else{
+				pstmt.setString(7, "user");
+			}
 			pstmt.setString		(8, user.getPassword());
 			pstmt.setString		(9, user.getCcNumber());
 			
 			returnValue = ConnectionManager.executeUpdate(pstmt);
 
 
-		} catch (SQLException e) {
-			// e.printStackTrace();
-			throw new CustomException(e, StatusCode.DB_ERROR);
+		} catch (Exception e) {
+			logger.error("Error occured during addUser !", e);
+			throw new CustomException("Error occured during addUser !", e);
 		} finally {
 			try {
-				pstmt.close();
 				conn.close();
-			} catch (Exception e2) {
-
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during addUser !", e);
+				e.printStackTrace();
 			}
 		}
 		return returnValue;
@@ -146,6 +147,7 @@ public class UserDAOImpl implements UserDAO {
 		Connection conn = ConnectionManager.getConnectionFromDataSource();
 		PreparedStatement pstmt = null;
 		try {
+			
 			pstmt = conn.prepareStatement(SAVE_USER_ADDRESS);
 			pstmt.setString		(1, address.getAddresstype());
 			pstmt.setString		(2, address.getAddressLine1());
@@ -156,19 +158,19 @@ public class UserDAOImpl implements UserDAO {
 			pstmt.setString		(7, address.getCountry());			
 			pstmt.setString		(8, address.getPhoneNo());
 			pstmt.setInt	    (9, userId);
-			
 			returnValue = ConnectionManager.executeUpdate(pstmt);
 
 
-		} catch (SQLException e) {
-			// e.printStackTrace();
-			throw new CustomException(e, StatusCode.DB_ERROR);
+		} catch (Exception e) {
+			logger.error("Error occured during saveAddress !", e);
+			throw new CustomException("Error occured during saveAddress !", e);
 		} finally {
 			try {
-				pstmt.close();
 				conn.close();
-			} catch (Exception e2) {
-
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during saveAddress !", e);
+				e.printStackTrace();
 			}
 		}
 		return returnValue;
@@ -183,17 +185,12 @@ public class UserDAOImpl implements UserDAO {
 		PreparedStatement pstmt = null;
 		Address address = null;
 		try {  		
-		        conn = ConnectionManager.getConnectionFromDataSource();
-		        
+		            conn = ConnectionManager.getConnectionFromDataSource();
 					pstmt = conn.prepareStatement(GET_USER_ADDRESS);
 					pstmt.setInt(1, userId);
 					pstmt.setString(2, adddressType);
-					
 					rs = ConnectionManager.executeQuery(pstmt);
-					
-
 					while (rs.next()) {
-						
 						address = new Address();
 						address.setId(rs.getInt("address_id"));
 						address.setAddresstype(rs.getString("address_type"));
@@ -204,25 +201,24 @@ public class UserDAOImpl implements UserDAO {
 						address.setZip(rs.getString("zip"));
 						address.setCountry(rs.getString("country"));
 						address.setPhoneNo(rs.getString("phone_no"));
-
 						break;
 
 					}
 					
 
-				} catch (Exception e) {
-					System.out.println("Error occured during database operation!");
-					e.printStackTrace();
-				} finally {
-					try {
-						rs.close();
-						conn.close();
-						pstmt.close();
-					} catch (SQLException e) {
-						
-						e.printStackTrace();
-					}
-				}
+		}catch (Exception e) {
+			logger.error("Error occured during getAddress !", e);
+			throw new CustomException("Error occured during getAddress !", e);
+		}finally {
+			try {
+				rs.close();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during getAddress !", e);
+				e.printStackTrace();
+			}
+		}
 		
 		return address;
 		
@@ -238,15 +234,12 @@ public class UserDAOImpl implements UserDAO {
 		String query = "SELECT * FROM wicare.wi_user WHERE id = ?";
 		ResultSet rs = null;
 		PreparedStatement pstmt = null;
-
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, id);
 			rs = ConnectionManager.executeQuery(pstmt);
-
-			user = new User();
-
 			while (rs.next()) {
+				user = new User();
 				user.setUserid(rs.getInt("user_id"));
 				user.setFirstName(rs.getString("first_name"));
 				user.setMiddleName(rs.getString("middle_name"));
@@ -259,27 +252,22 @@ public class UserDAOImpl implements UserDAO {
 				if(rs.getString("user_type").equalsIgnoreCase("admin")){user.setAdmin(true);}
 				else{user.setAdmin(false);}
 				user.setCcNumber(rs.getString("cc_info"));
-
 				break;
-
 			}
 			
 		} catch (Exception e) {
-			
-			System.out.println("Error occured during database operation!");
-			e.printStackTrace();
-			
+			logger.error("Error occured during searchUser !", e);
+			throw new CustomException("Error occured during searchUser !", e);
 		} finally {
 			try {
 				rs.close();
 				conn.close();
 				pstmt.close();
 			} catch (SQLException e) {
-
+				logger.error("Error occured during searchUser !", e);
 				e.printStackTrace();
 			}
 		}
-
 		return user;
 	}
 	
@@ -302,18 +290,17 @@ public class UserDAOImpl implements UserDAO {
 			pstmt.setString(4, user.getWicAcctNo());
 			pstmt.setBoolean(5, user.isWIC());		
 			pstmt.setInt(6, user.getUserid());
-			
-			
-
 			returnValue = ConnectionManager.executeUpdate(pstmt);
 
-		} catch (SQLException e) {
-			throw new CustomException(e, StatusCode.DB_ERROR);
+		} catch (Exception e) {
+			logger.error("Error occured during updateUser !", e);
+			throw new CustomException("Error occured during updateUser !", e);
 		} finally {
 			try {
 				conn.close();
 				pstmt.close();
 			} catch (SQLException e) {
+				logger.error("Error occured during updateUser !", e);
 				e.printStackTrace();
 			}
 		}
@@ -328,13 +315,8 @@ public class UserDAOImpl implements UserDAO {
 		Connection conn = ConnectionManager.getConnectionFromDataSource();
 		PreparedStatement pstmt = null;
 
-		
-
 		try {
 			pstmt = conn.prepareStatement(UPDATE_USER_ADDRESS);			
-			
-			
-			
 			pstmt.setString		(1, address.getAddresstype());
 			pstmt.setString		(2, address.getAddressLine1());
 			pstmt.setString		(3, address.getAddressLine2());
@@ -344,18 +326,17 @@ public class UserDAOImpl implements UserDAO {
 			pstmt.setString		(7, address.getCountry());			
 			pstmt.setString		(8, address.getPhoneNo());
 			pstmt.setInt	    (9, address.getId());
-			
-			
-
 			returnValue = ConnectionManager.executeUpdate(pstmt);
 
-		} catch (SQLException e) {
-			throw new CustomException(e, StatusCode.DB_ERROR);
+		} catch (Exception e) {
+			logger.error("Error occured during updateAddress !", e);
+			throw new CustomException("Error occured during updateAddress !", e);
 		} finally {
 			try {
 				conn.close();
 				pstmt.close();
 			} catch (SQLException e) {
+				logger.error("Error occured during updateAddress !", e);
 				e.printStackTrace();
 			}
 		}

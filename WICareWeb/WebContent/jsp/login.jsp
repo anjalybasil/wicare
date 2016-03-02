@@ -84,6 +84,7 @@
 
 											<form id="login_form" action="${pageContext.request.contextPath}/login.do" method="post" id="login" class="type_2">
 												<input type="hidden" id="action" name="action" value="login">
+												 <div style="color: #FF0000;">${errorMessage}</div>
 												<ul>
 
 													<li class="row">

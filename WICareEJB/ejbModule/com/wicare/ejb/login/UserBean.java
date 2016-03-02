@@ -52,24 +52,22 @@ public class UserBean implements SessionBean {
 		
 	}
 	
-	public User validateUser(String userName, String password) throws CustomException,RemoteException{
+	public User validateUser(String userName, String password) throws CustomException{
 		return userService.validateUser(userName, password);
 	}
 	
-	public User searchUser(int id) throws CustomException,RemoteException{
-		
+	public User searchUser(int id) throws CustomException{
 		return userService.searchUser(id);
 		
 	}
 	
-	public User addUser(User user)throws CustomException,RemoteException{
-		
+	public User addUser(User user)throws CustomException{
 		return userService.addUser(user);
 
 	}
 	
 	
-	public User updateUser(User user) throws CustomException,RemoteException{
+	public User updateUser(User user) throws CustomException{
 		return userService.updateUser(user);
 	}
 	

@@ -16,7 +16,7 @@
 								<ul class="theme_menu">
 
 									<li class="active"><a href='javascript:document.myaccountform.submit()' >Account Dashboard</a></li>
-									<li><a href="#">Account Information2</a></li>									
+								<!-- 	<li><a href="#">Account Information</a></li>	 -->								
 									<li><a href="${pageContext.request.contextPath}/user.do?action=myorders">My Orders</a></li>
 									<li></li>
 									
