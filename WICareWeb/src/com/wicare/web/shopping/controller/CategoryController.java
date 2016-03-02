@@ -2,6 +2,7 @@ package com.wicare.web.shopping.controller;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,11 +20,13 @@ public class CategoryController
 {
 	FoodService fs = new FoodServiceImpl();
 	final String TEST_LIST_OUTPUT = "/jsp/category_page.jsp";
+	final String LOAD_HOME = "/jsp/home.jsp";
+	String forwardView;
 	public void printFoodHelper(HttpServletRequest request, HttpServletResponse response) throws RemoteException
 	{
-		
+		forwardView = TEST_LIST_OUTPUT;
 		String action = request.getParameter("action");
-		String forwardView = TEST_LIST_OUTPUT;
+		
 		
 		if(action != null && action.equalsIgnoreCase("print_all_food"))
 		{
@@ -127,5 +130,6 @@ public class CategoryController
 		catch (ServletException e)	{e.printStackTrace();} 
 		catch (IOException e) 		{e.printStackTrace();}
 	}
+	
 	
 }

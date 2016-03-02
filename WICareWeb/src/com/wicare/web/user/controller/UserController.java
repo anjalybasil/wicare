@@ -116,7 +116,7 @@ public class UserController {
 	  List<Order> orderList  = shoppingDelegate.getOrdersByUser(userID);
 	  
 	  
-	  Order order = null;
+	 /* Order order = null;
 	  orderList = new ArrayList<Order>();
 	  order = new Order();
 	  order.setOrderID(1);
@@ -128,7 +128,7 @@ public class UserController {
 	  order.setOrderID(2);
 	  order.setOrderDate(""+new Date());
 	  order.setOrderTotal(888);
-	  orderList.add(order);
+	  orderList.add(order);*/
 	  
 	  return orderList;
   }
@@ -148,7 +148,7 @@ public class UserController {
 	  
 	  System.out.println("orderDetailList" + orderDetailList);
 	  
-	  OrderDetail order = null;
+	 /* OrderDetail order = null;
 	  orderDetailList = new ArrayList<OrderDetail>();
 	  order = new OrderDetail();
 	  order.setOrderID(1);
@@ -162,7 +162,7 @@ public class UserController {
 	  order.setProductName("Spinach");
 	  order.setProductPrice(50);
 	  order.setProductQuantity(5);
-	  orderDetailList.add(order);
+	  orderDetailList.add(order);*/
 	  
 	  return orderDetailList;
   }

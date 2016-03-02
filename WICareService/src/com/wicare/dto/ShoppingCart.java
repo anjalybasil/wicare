@@ -10,6 +10,8 @@ public class ShoppingCart
 	private List<FoodProduct> products = new ArrayList<FoodProduct>();
 	private double total;
 	private double subTotal;
+	private double wicTotal;
+	private double wicSubTotal;
 	
 	public List<FoodProduct> getProducts() 
 	{
@@ -24,11 +26,30 @@ public class ShoppingCart
 	public double getSubTotal() 
 	{
 		
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("####.##");
 		subTotal = calculateSubTotal();
 		
 		
 		return Double.valueOf(df.format(subTotal));
+	}
+
+	private double getWicSubTotal() 
+	{
+		DecimalFormat df = new DecimalFormat("####.##");
+		this.wicSubTotal = calculateWicSubTotal();
+		
+		
+		return Double.valueOf(df.format(this.wicSubTotal));
+	}
+
+	private double calculateWicSubTotal() 
+	{
+		double amt = 0;
+		for(int i = 0; i < this.products.size(); i++)
+		{
+			amt += (this.products.get(i).getWicPrice() * this.products.get(i).getFoodAmount());
+		}
+		return amt;
 	}
 
 	private double calculateSubTotal() 
@@ -46,19 +67,40 @@ public class ShoppingCart
 		this.subTotal = subTotal;
 	}
 
+	public void setWicSubTotal(double wicSubTotal)
+	{
+		this.wicSubTotal = wicSubTotal;
+	}
+
 	public double getTotal() 
 	{
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("#####.##");
 		total = getSubTotal() * SALES_TAX;
 		
 		
 		return Double.valueOf(df.format(total));
 	}
 
+	public double getWicTotal()
+	{
+		DecimalFormat df = new DecimalFormat("#####.##");
+		this.wicTotal = getWicSubTotal() * SALES_TAX;
+		
+		
+		return Double.valueOf(df.format(this.wicTotal));
+	}
+
 	public void setTotal(double total) 
 	{
 		this.total = total;
 	}
+	
+	public void setWicTotal(double wicTotal)
+	{
+		this.wicTotal = wicTotal;
+	}
+
+	
 	
 	public void addProduct(FoodProduct product)
 	{

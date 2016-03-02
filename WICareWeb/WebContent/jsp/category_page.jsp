@@ -184,7 +184,14 @@
 
 											<div class="clearfix product_info">
 
-												<p class="product_price alignleft"><b><c:out value="$ ${food.foodPrice}" /></b></p>
+												<p class="product_price alignleft">
+												<b>
+												<c:if test="${sessionScope.user.WIC == true}">
+												<c:out value="$ ${food.wicPrice}" /></c:if>
+												<c:if test="${sessionScope.user.WIC == false}">
+												<c:out value="$ ${food.foodPrice}" /></c:if>
+												</b>
+												</p>
 
 											</div>
 

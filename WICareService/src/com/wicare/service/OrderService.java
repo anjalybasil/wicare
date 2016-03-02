@@ -12,6 +12,6 @@ public interface OrderService
 	public int addOrder(Order o) throws CustomException;
 	public List<Order> getOrdersByUser(int userID) throws CustomException;
 	public List<Order> getAllOrders() throws CustomException;
-	int addOrderDetails(Order o, List<FoodProduct> food) throws CustomException;
+	public int addOrderDetails(Order o, List<FoodProduct> food) throws CustomException;
 	public List<OrderDetail> getOrderDetails(int orderId) throws CustomException;
 }

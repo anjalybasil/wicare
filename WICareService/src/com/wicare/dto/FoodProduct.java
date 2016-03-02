@@ -21,6 +21,7 @@ public class FoodProduct implements Serializable
 	private int foodID;
 	private String foodName;
 	private double foodPrice;
+	private double wicPrice;
 	private Category foodCategory;
 	private SubCategory foodSubCategory;
 	private int foodAmount;
@@ -31,12 +32,13 @@ public class FoodProduct implements Serializable
 		
 	}
 	
-	public FoodProduct(String name, double price, String category, int amount, String imgFile)
+	public FoodProduct(String name, double price, double wicPrice, String category, int amount, String imgFile)
 	{
 		foodName = name;
 		foodPrice = price;
 		foodCategory = Category.valueOf(category);
 		foodAmount = amount;
+		this.setWicPrice(wicPrice);
 		this.imgFile = imgFile;
 	}
 	
@@ -70,6 +72,14 @@ public class FoodProduct implements Serializable
 		this.foodPrice = foodPrice;
 	}
 	
+	public double getWicPrice() {
+		return wicPrice;
+	}
+
+	public void setWicPrice(double wicPrice) {
+		this.wicPrice = wicPrice;
+	}
+
 	public Category getFoodCategory() 
 	{
 		return foodCategory;

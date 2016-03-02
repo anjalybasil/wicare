@@ -47,16 +47,45 @@ public class ShoppingServlet extends HttpServlet {
 		}
 		else if(action.equalsIgnoreCase("shopping_cart"))
 		{
-			nextJSP = "/jsp/shopping_cart.jsp";
+			nextJSP = "/jsp/shop_shopping_cart.jsp";
+			RequestDispatcher dispatch = request.getRequestDispatcher(nextJSP);
+			try 
+			{
+				dispatch.forward(request, response);
+			} 
+			catch (ServletException e)	{e.printStackTrace();} 
+			catch (IOException e) 		{e.printStackTrace();}
 		}
 		else if(action.equalsIgnoreCase("add_to_cart"))
 		{
 			System.out.println("Inside add_to_cart calling ShoppingCartController");
 			cartController.addToCart(request, response);			
 		}
-		
-		//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-		//dispatcher.forward(request, response);
+		else if(action.equalsIgnoreCase("clear_cart"))
+		{
+			System.out.println("Inside clear cart:");
+			cartController.clearCart(request, response);
+			
+		}
+		else if(action.equalsIgnoreCase("add_cart_from_cart"))
+		{
+			cartController.incrementCart(request, response);
+			System.out.println("Inside the add_cart_from_cart method: Action = " + action + " product = " + request.getParameter("product"));
+			
+		}
+		else if(action.equalsIgnoreCase("remove_cart_from_cart"))
+		{
+			cartController.incrementCart(request, response);
+			System.out.println("Inside the remove_cart_from_cart method: Action = " + action + " product = " + request.getParameter("product"));
+		}
+		else if(action.equalsIgnoreCase("remove_from_cart_dropdown"))
+		{
+			cartController.deleteFromCart(request, response);
+		}
+		else if(action.equalsIgnoreCase("checkout"))
+		{
+			cartController.checkout(request, response);
+		}
 	}
 
 	/**

@@ -15,6 +15,11 @@ function submitThisForm(f) {
 	return true;
 }
 
+function deleteMethod(action, count)
+{
+	var URL = "../shoppingcart.do?action="+action+"&product=" + id;
+	window.location.href= URL;
+}
 </script>
 
 
@@ -34,7 +39,7 @@ function submitThisForm(f) {
 
 									<!-- - - - - - - - - - - - - - Logo - - - - - - - - - - - - - - - - -->
 
-									<a href="index.html" class="logo">
+									<a href="${pageContext.request.contextPath}/jsp/home.jsp" class="logo">
 
 										<img src="${pageContext.request.contextPath}/images/WIClogo2.png" alt="" width="339" height="80">
 
@@ -160,6 +165,7 @@ function submitThisForm(f) {
 											<ul>
 
 												<li><a href="${pageContext.request.contextPath}/jsp/home.jsp">Home</a></li>
+												
 												<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
 												   
 																							
@@ -175,7 +181,7 @@ function submitThisForm(f) {
 													
 													
 													<li><a href="${pageContext.request.contextPath}/jsp/shop_shopping_cart.jsp">Shopping Cart</a></li>
-													<li><a href="shop_checkout.html">Checkout</a></li>
+													<li><a href="${pageContext.request.contextPath}/jsp/shop_checkout.jsp">Checkout</a></li>
 													
 												</c:if>
 												<li></li>
@@ -207,7 +213,8 @@ function submitThisForm(f) {
 										<div class="shopping_cart dropdown">
 
 												<div class="animated_item">
-
+												<div style="overflow: scroll ; overflow-x: hidden; max-height: 350px; width: 100%;">
+												
 													<p class="title">Recently added item(s)</p>
 
 													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
@@ -222,8 +229,7 @@ function submitThisForm(f) {
 
 														<p>${food.foodAmount} x ${food.foodPrice * food.foodAmount}</p>
 
-														<button class="close"></button><!-- remove delete (make this remove from the shopping cart) -->
-
+														<button class="close" onClick="deleteMethod('remove_from_cart_dropdown', ${i.index})" ></button><!-- remove delete (make this remove from the shopping cart) -->
 													</div><!--/ .clearfix.sc_product-->
 													
 													</c:forEach>
@@ -244,7 +250,7 @@ function submitThisForm(f) {
 
 													</ul>
 													
-													<!-- - - - - - - - - - - - - - End of total info - - - - - - - - - - - - - - - - -->
+											</div>	<!-- - - - - - - - - - - - - - End of total info - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .animated_item-->
 

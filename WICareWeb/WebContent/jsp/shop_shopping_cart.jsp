@@ -48,6 +48,15 @@
 			<link rel="stylesheet" type="text/css" href="css/oldie.css">
 		<![endif]-->
 	</head>
+	
+	<script type="text/javascript">
+		function incrementMethod(action, id)
+		{
+			var URL = "../shoppingcart.do?action="+action+"&product=" + id;
+			window.location.href= URL;
+		}
+	
+	</script>
 	<body>
 
 		<!-- - - - - - - - - - - - - - Main Wrapper - - - - - - - - - - - - - - - - -->
@@ -132,10 +141,10 @@
 										<td data-title="Quantity">
 
 											<div class="qty min clearfix">
-
-												<button type="submit" formaction="/WICareWeb/jsp/home.jsp" class="theme_button" data-direction="minus">&#45;</button>
+													<!--          Find a way to send the varStatus to the method -->
+										<button class="theme_button" onClick="incrementMethod('remove_cart_from_cart', ${i.index})" data-direction="minus">&#45;</button>
 												<input type="text" name="" value='${currentOrder.foodAmount}' />
-												<button type="submit" formaction="/WICareWeb/jsp/home.jsp" class="theme_button" data-direction="plus">&#43;</button>
+										<button class="theme_button" onClick="incrementMethod('add_cart_from_cart', ${i.index})" data-direction="plus">&#43;</button>
 
 											</div><!--/ .qty.min.clearfix-->
 
@@ -214,7 +223,7 @@
 
 								<footer class="bottom_box">
 
-									<a class="button_blue middle_btn" href="#">Proceed to Checkout</a>
+									<a class="button_blue middle_btn" href="${pageContext.request.contextPath}/jsp/shop_checkout.jsp">Proceed to Checkout</a>
 
 									<div class="single_link_wrap">
 
