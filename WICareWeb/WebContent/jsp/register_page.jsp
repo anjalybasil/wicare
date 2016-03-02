@@ -143,10 +143,24 @@
 	       return true;
 	    }
 	    
+	    
+	    function enableDisableWicAccountNumber() {
+			   
+			   var iswic = document.getElementById("radio_1");	
+			   if(!iswic.checked) {
+				   var wicAccountNumber = document.getElementById("wicacctno");
+				   wicAccountNumber.value = null;
+				   document.getElementById("wicacctno").readOnly  = true;
+			   }else{
+				   document.getElementById("wicacctno").readOnly   = document.getElementById("phoneNo").readOnly;
+			   }
+			   
+		   }
+	    
 		</script>
 		
 	</head>
-	<body>
+	<body onload="enableDisableWicAccountNumber();">
 
 		<!-- - - - - - - - - - - - - - Main Wrapper - - - - - - - - - - - - - - - - -->
 
@@ -325,7 +339,7 @@
 									<li class="row">
 
 									  <div class="col-xs-6">
-										<input type="radio" id="radio_1" name="iswic" value="true" <c:if test="${requestScope.user.WIC eq true}">CHECKED</c:if> >
+										<input type="radio" id="radio_1" name="iswic" value="true" onclick="javascript:enableDisableWicAccountNumber();" <c:if test="${requestScope.user.WIC eq true}">CHECKED</c:if> >
 										<label for="radio_1">WIC Member</label>
 									  </div><!--/ [col] -->
 
@@ -334,7 +348,7 @@
 									<li class="row">
 
 									  <div class="col-xs-6">
-											<input type="radio" name="iswic" id="radio_2" value ="false" <c:if test="${requestScope.user.WIC eq false or requestScope.user == null }">CHECKED</c:if> >
+											<input type="radio" name="iswic" id="radio_2" value ="false" onclick="javascript:enableDisableWicAccountNumber();" <c:if test="${requestScope.user.WIC eq false or requestScope.user == null }">CHECKED</c:if> >
 											<label for="radio_2">Non-WIC Member</label>
 
 									  </div>
