@@ -263,7 +263,7 @@
 
 										<div class="col-xs-12">
 
-											<label for="address" class="required">Address 2</label>
+											<label for="address" >Address 2</label>
                                           <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
