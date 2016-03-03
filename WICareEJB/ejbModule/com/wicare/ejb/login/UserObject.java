@@ -17,5 +17,12 @@ public interface UserObject extends EJBObject {
 	
 	public User updateUser(User user) throws CustomException, RemoteException;
 	
+	public boolean changePassword(int userId, String password) throws CustomException, RemoteException;
+	
+	public boolean validateEmail(String email) throws CustomException, RemoteException;
+
+	public boolean updatePassword(String email, String password) throws CustomException, RemoteException;
+	
+	
 	
 }

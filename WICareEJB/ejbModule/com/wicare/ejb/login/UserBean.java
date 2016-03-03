@@ -71,9 +71,17 @@ public class UserBean implements SessionBean {
 		return userService.updateUser(user);
 	}
 	
-	
+	public boolean changePassword(int userId, String password) throws CustomException {
+		return userService.changePassword(userId, password);
+	}
 
+	public boolean validateEmail(String email) throws CustomException{
+		return userService.validateEmail(email);
+	}
 	
+	public boolean updatePassword(String email, String password) throws CustomException{
+		return userService.updatePassword(email, password);
+	}
 	
 
 }

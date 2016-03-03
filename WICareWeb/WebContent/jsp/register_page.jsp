@@ -206,14 +206,14 @@
 										<div class="col-sm-6">
 											
 											<label for="first_name" class="required">First Name</label>
-											<input type="text"  id="first_name" name = "firstName" value="${requestScope.user.firstName}" >
+											<input type="text"  id="first_name" name = "firstName" value="${requestScope.user.firstName}" required>
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 											
 											<label for="last_name" class="required">Last Name</label>
-											<input type="text" id="last_name" name="lastName" value="${requestScope.user.lastName}" >
+											<input type="text" id="last_name" name="lastName" value="${requestScope.user.lastName}" required>
 
 										</div><!--/ [col] -->
 
@@ -231,7 +231,7 @@
 										<div class="col-sm-6">
 											
 											<label for="email_address" class="required">Email Address</label>
-											<input type="text"  id="email" name="email" value="${requestScope.user.email}">
+											<input type="email"  id="email" name="email" value="${requestScope.user.email}" required>
 
 										</div><!--/ [col] -->
 
@@ -242,7 +242,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 1</label>
-											<input type="text"  id="addressline1" name ="addressline1" value="${requestScope.user.addressList[0].addressLine1}" >
+											<input type="text"  id="addressline1" name ="addressline1" value="${requestScope.user.addressList[0].addressLine1}" required>
 
 										</div><!--/ [col] -->
 
@@ -253,7 +253,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 2</label>
-                                          <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}">
+                                          <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}" required>
 
 										</div><!--/ [col] -->
 
@@ -264,7 +264,7 @@
 										<div class="col-sm-6">
 											
 											<label for="city" class="required">City</label>
-											<input type="text"  id="city" name="city" value="${requestScope.user.addressList[0].city}" >
+											<input type="text"  id="city" name="city" value="${requestScope.user.addressList[0].city}" required>
 
 										</div><!--/ [col] -->
 
@@ -272,7 +272,7 @@
 
 											<label class="required">State/Province</label>
 
-											<input type="text"  id="state" name="state" value="${requestScope.user.addressList[0].state}">
+											<input type="text"  id="state" name="state" value="${requestScope.user.addressList[0].state}" required>
 
 										</div><!--/ [col] -->
 
@@ -283,7 +283,7 @@
 										<div class="col-sm-6">
 
 											<label for="postal_code" class="required">Zip/Postal Code</label>
-											<input type="text"  id="zip" name="zip" value="${requestScope.user.addressList[0].zip}">
+											<input type="text"  id="zip" name="zip" value="${requestScope.user.addressList[0].zip}" required>
 
 										</div><!--/ [col] -->
 
@@ -311,7 +311,7 @@
 										<div class="col-sm-6">
 
 											<label for="telephone" class="required">Telephone</label>
-											<input type="text"  id="phoneNo" name="phoneNo" value="${requestScope.user.addressList[0].phoneNo}">
+											<input type="text"  id="phoneNo" name="phoneNo" value="${requestScope.user.addressList[0].phoneNo}" required>
 
 										</div><!--/ [col] -->
 
@@ -323,14 +323,14 @@
 										<div class="col-sm-6">
 
 											<label for="password" class="required">Password</label>
-											<input type="password"  id="password" name="password">
+											<input type="password"  id="password" name="password" required>
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 
 											<label for="confirm" class="required">Confirm Password</label>
-											<input type="password" id="confirmPassword" name="confirmPassword">
+											<input type="password" id="confirmPassword" name="confirmPassword" required>
 
 										</div><!--/ [col] -->
 
@@ -355,7 +355,7 @@
 									</li>
 									<li class="row">
 									  <div class="col-sm-6">
-									    <label for="fax4">WIC Account #</label>
+									    <label for="wicacctno">WIC Account #</label>
 									    <input type="text" name="wicacctno" id="wicacctno" value="${requestScope.user.wicAcctNo}">
 								      </div>
 									</li>
@@ -369,7 +369,6 @@
 							<div class="left_side">
 
                                   <button class='button_blue middle_btn' type='submit'>Register</button>
-								<!-- <a href="#" class="button_blue middle_btn">Register</a> -->
 
 							</div>
 

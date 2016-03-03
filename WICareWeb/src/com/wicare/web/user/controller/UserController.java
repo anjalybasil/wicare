@@ -20,6 +20,7 @@ import com.wicare.ejb.locator.ShoppingDelegate;
 import com.wicare.ejb.locator.UserDelegate;
 import com.wicare.exception.CustomException;
 import com.wicare.web.util.EncryptionUtil;
+import com.wicare.web.util.SendEmail;
 
 public class UserController {
 	
@@ -116,19 +117,6 @@ public class UserController {
 	  List<Order> orderList  = shoppingDelegate.getOrdersByUser(userID);
 	  
 	  
-	 /* Order order = null;
-	  orderList = new ArrayList<Order>();
-	  order = new Order();
-	  order.setOrderID(1);
-	  order.setOrderDate(""+new Date());
-	  order.setOrderTotal(999);
-	  orderList.add(order);
-	  
-	  order = new Order();
-	  order.setOrderID(2);
-	  order.setOrderDate(""+new Date());
-	  order.setOrderTotal(888);
-	  orderList.add(order);*/
 	  
 	  return orderList;
   }
@@ -148,21 +136,7 @@ public class UserController {
 	  
 	  System.out.println("orderDetailList" + orderDetailList);
 	  
-	 /* OrderDetail order = null;
-	  orderDetailList = new ArrayList<OrderDetail>();
-	  order = new OrderDetail();
-	  order.setOrderID(1);
-	  order.setProductName("Tomato");
-	  order.setProductPrice(120);
-	  order.setProductQuantity(2);
-	  orderDetailList.add(order);
-	  
-	  order = new OrderDetail();
-	  order.setOrderID(1);
-	  order.setProductName("Spinach");
-	  order.setProductPrice(50);
-	  order.setProductQuantity(5);
-	  orderDetailList.add(order);*/
+	
 	  
 	  return orderDetailList;
   }
@@ -185,6 +159,37 @@ public class UserController {
 			e.printStackTrace();
 			logger.error("Error occured during getShoppingDelegate !", e);
 			throw new CustomException("Error occured during getShoppingDelegate !", e);
+		}
+		
+	}
+	
+	public boolean changePassword(HttpServletRequest request, HttpServletResponse response) throws CustomException{
+		
+		UserDelegate userDelegate = getUserDelegate();
+		HttpSession session = request.getSession(false);
+		int userId = ((User)session.getAttribute("user")).getUserid();
+		EncryptionUtil  encryptionUtil = new EncryptionUtil();		
+		return userDelegate.changePassword(userId, encryptionUtil.encodeBase64(request.getParameter("password")));
+		
+	}
+	
+	public boolean validateEmail(HttpServletRequest request, HttpServletResponse response) throws CustomException{
+		
+		UserDelegate userDelegate = getUserDelegate();
+		return userDelegate.validateEmail(request.getParameter("email"));
+		
+	}
+	
+	public boolean updatePasswordAndSendEmail(HttpServletRequest request, HttpServletResponse response) throws CustomException{
+		
+		String email = request.getParameter("email");
+		String password = SendEmail.sendEmail(email);
+		if(null != password){
+			UserDelegate userDelegate = getUserDelegate();
+			EncryptionUtil  encryptionUtil = new EncryptionUtil();
+			return userDelegate.updatePassword(email, encryptionUtil.encodeBase64(password));
+		}else{
+			return false;
 		}
 		
 	}

@@ -112,5 +112,41 @@ public class UserDelegate {
 	}	
 			
 	
+	public boolean changePassword(int userId, String password) throws CustomException{
+		try {	
+			return session.changePassword(userId, password);
+		  }catch (RemoteException e) {
+			e.printStackTrace();
+			logger.error("Error occured during changePassword !", e);
+			throw new CustomException("Error occured during changePassword !", e);
+		}
+		
+	}
+	
+	
+	public boolean validateEmail(String email)  throws CustomException{
+		try {	
+			return session.validateEmail(email);
+		  }catch (RemoteException e) {
+			e.printStackTrace();
+			logger.error("Error occured during validateEmail !", e);
+			throw new CustomException("Error occured during validateEmail !", e);
+		}
+		
+	}
+	
+	
+	public boolean updatePassword(String email, String password) throws CustomException{
+		try {	
+			return session.updatePassword(email, password);
+		  }catch (RemoteException e) {
+			e.printStackTrace();
+			logger.error("Error occured during updatePassword !", e);
+			throw new CustomException("Error occured during updatePassword !", e);
+		}
+		
+	}
+	
+	
 
 }

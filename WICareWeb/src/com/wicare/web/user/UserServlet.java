@@ -98,6 +98,32 @@ public class UserServlet extends HttpServlet {
 				 HttpSession session = request.getSession(false);
 				 request.setAttribute("user", ((User)session.getAttribute("user")).clone());
 				 nextJSP = "/jsp/my_account.jsp";
+			}else if("changepassword".equalsIgnoreCase(action)){
+				 if(validatePassword(request)){
+					 if(userController.changePassword(request, response)){
+						 request.setAttribute("updateMessage", "Password changed successfully, Please use the new password next time to login !!.");
+					   
+					 }else{
+						  request.setAttribute("errorMessage", "Couldn't change password at this time please try later...");	 
+					 }
+				 }
+				 
+				  nextJSP = "/jsp/change_password.jsp";
+				 
+			}else if("forgotpassword".equalsIgnoreCase(action)){
+				 
+				if(userController.validateEmail(request, response)){
+					 if(userController.updatePasswordAndSendEmail(request, response)){
+						 request.setAttribute("updateMessage", "An email has send with new password, Please check you email and try with the password !.");
+					   
+					 }else{
+						  request.setAttribute("errorMessage", "Error occured,  please try later...");	 
+					 }
+				 }else{
+				  request.setAttribute("errorMessage", "Email Address not found...");
+				 }
+				  nextJSP = "/jsp/forgot_password.jsp";
+				 
 			}
 		else{
 			 nextJSP = "/jsp/login.jsp";
@@ -119,7 +145,7 @@ public class UserServlet extends HttpServlet {
 	}	
 	
 	
-	private boolean validateUserDetails(HttpServletRequest request, HttpServletResponse response, String action) throws ServletException, IOException{
+	private boolean validateUserDetails(HttpServletRequest request, HttpServletResponse response, String action) throws ServletException, IOException, CustomException{
 			User user = new User();
 			
 			user.setFirstName(request.getParameter("firstName"));
@@ -158,6 +184,12 @@ public class UserServlet extends HttpServlet {
 					  request.setAttribute("errorMessage", "Email is required..");	
 					  return false;
 				}
+				
+				if(userController.validateEmail(request, response)){
+					  request.setAttribute("errorMessage", "Email is already registerd, Use another email..");	
+					  return false;
+				}
+					
 			}
 			
 			if(StringUtil.isNullOrEmpty(address.getAddressLine1())){
@@ -187,19 +219,8 @@ public class UserServlet extends HttpServlet {
 			
 			if("register".equalsIgnoreCase(action)){
 				
-				if(StringUtil.isNullOrEmpty(request.getParameter("password"))){
-					  request.setAttribute("errorMessage", "Password is required..");	
-					  return false;
-				}
-				
-				if(StringUtil.isNullOrEmpty(request.getParameter("confirmPassword"))){
-					  request.setAttribute("errorMessage", "ConfirmPassword is required..");	
-					  return false;
-				}
-				
-				if(!request.getParameter("password").equals(request.getParameter("confirmPassword"))){
-					  request.setAttribute("errorMessage", "Password & Confirm Password should be same...");	
-					  return false;
+				if(!validatePassword(request)){
+					return false;
 				}
 			}
 			
@@ -217,5 +238,28 @@ public class UserServlet extends HttpServlet {
 		
 	}
 
+
+	private boolean validatePassword(HttpServletRequest request) {
+		
+		if(StringUtil.isNullOrEmpty(request.getParameter("password"))){
+			  request.setAttribute("errorMessage", "Password is required..");	
+			  return false;
+		}
+		
+		if(StringUtil.isNullOrEmpty(request.getParameter("confirmPassword"))){
+			  request.setAttribute("errorMessage", "ConfirmPassword is required..");	
+			  return false;
+		}
+		
+		if(!request.getParameter("password").equals(request.getParameter("confirmPassword"))){
+			  request.setAttribute("errorMessage", "Password & Confirm Password should be same...");	
+			  return false;
+		}
+		
+		return true;
+	}
+	
+	
+	
 	
 }

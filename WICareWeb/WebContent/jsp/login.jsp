@@ -82,7 +82,7 @@
 
 											<p class="subcaption">Already registered? Please log in below:</p>
 
-											<form id="login_form" action="${pageContext.request.contextPath}/login.do" method="post" id="login" class="type_2">
+											<form id="login_form" action="${pageContext.request.contextPath}/login.do" method="post"  class="type_2">
 												<input type="hidden" id="action" name="action" value="login">
 												 <div style="color: #FF0000;">${errorMessage}</div>
 												<ul>
@@ -117,7 +117,7 @@
 
 																<div class="left_side">
 
-																	<a href="#" class="small_link">Forgot your password?</a>
+																	<a href="${pageContext.request.contextPath}/jsp/forgot_password.jsp" class="small_link">Forgot your password?</a>
 
 																</div>
 

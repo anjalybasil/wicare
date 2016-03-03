@@ -14,6 +14,9 @@ public interface UserDAO {
 	public User getUser(String userName, String password) throws CustomException;
 	public Address getAddress(int userId, String adddressType) throws CustomException;
 	public int updateAddress(Address address) throws CustomException;
+	public boolean changePassword(int userId, String password) throws CustomException;
+	public boolean validateEmail(String email) throws CustomException;
+	public boolean updatePassword(String email, String password) throws CustomException;
 	
 
 }

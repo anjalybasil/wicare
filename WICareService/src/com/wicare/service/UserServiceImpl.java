@@ -45,4 +45,29 @@ public class UserServiceImpl implements UserService {
 	}
 
 	
+	@Override
+	public boolean changePassword(int userId, String password)
+			throws CustomException {
+		 return userDAO.changePassword(userId, password);
+	}
+	
+	
+	
+	
+	@Override
+	public boolean validateEmail(String email)
+			throws CustomException {
+		 return userDAO.validateEmail(email);
+	}
+
+	
+	@Override
+	public boolean updatePassword(String email, String password)
+			throws CustomException {
+		 return userDAO.updatePassword(email, password);
+	}
+	
+	
+	
+	
 }

@@ -24,6 +24,12 @@ public class UserDAOImpl implements UserDAO {
 	public static final String UPDATE_USER_ADDRESS = "UPDATE wi_address SET address_type = ?, address_line1 = ?, address_line2 =?, city=?, state=?, zip=?, country=?, phone_no=? " +
 			"  where  address_id = ? ";
 	
+	public static final String UPDATE_USER_PASSWORD = "UPDATE wi_user SET password = ?  where  user_id = ? ";
+	
+	public static final String UPDATE_USER_PASSWORD_EMAIL = "UPDATE wi_user SET password = ?  where  email = ? ";
+	
+	
+	public static final String VALIDATE_EMAIL_ADDRESS = "select * from  wi_user  where  email = ? ";
 	
 	String updateQuery = "UPDATE wicare.wi_user SET `first_name` = ?,`middle_name` = ?,`last_name` = ?,`wic_acctno`=? WHERE `user_id` = ?";		
 	
@@ -344,4 +350,107 @@ public class UserDAOImpl implements UserDAO {
 		return returnValue;
 	}
 	
+
+
+	 public boolean changePassword(int userId, String password) throws CustomException{
+			
+		int returnValue = -1;
+		
+		Connection conn = ConnectionManager.getConnectionFromDataSource();
+		PreparedStatement pstmt = null;
+	
+		try {
+			pstmt = conn.prepareStatement(UPDATE_USER_PASSWORD);
+			pstmt.setString		(1, password);
+			pstmt.setInt		(2, userId);	
+			
+			returnValue = ConnectionManager.executeUpdate(pstmt);
+	
+		} catch (Exception e) {
+			logger.error("Error occured during changePassword !", e);
+			throw new CustomException("Error occured during changePassword !", e);
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during changePassword !", e);
+				e.printStackTrace();
+			}
+		}
+		
+	    return 1 == returnValue;
+	
+		
+	  }
+	 
+	 
+	 
+	 public boolean validateEmail(String email) throws CustomException{
+			
+		
+		Connection conn = ConnectionManager.getConnectionFromDataSource();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(VALIDATE_EMAIL_ADDRESS);
+			pstmt.setString		(1, email);
+			
+			rs = ConnectionManager.executeQuery(pstmt);
+			while (rs.next()) {
+				return true;
+			}
+	
+		} catch (Exception e) {
+			logger.error("Error occured during changePassword !", e);
+			throw new CustomException("Error occured during changePassword !", e);
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during changePassword !", e);
+				e.printStackTrace();
+			}
+		}
+		
+	    return false;
+	
+		
+	  }
+	 
+	 
+	 public boolean updatePassword(String email, String password) throws CustomException{
+			
+		int returnValue = -1;
+		
+		Connection conn = ConnectionManager.getConnectionFromDataSource();
+		PreparedStatement pstmt = null;
+	
+		try {
+			pstmt = conn.prepareStatement(UPDATE_USER_PASSWORD_EMAIL);
+			pstmt.setString		(1, password);
+			pstmt.setString		(2, email);	
+			
+			returnValue = ConnectionManager.executeUpdate(pstmt);
+	
+		} catch (Exception e) {
+			logger.error("Error occured during updatePassword !", e);
+			throw new CustomException("Error occured during updatePassword !", e);
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				logger.error("Error occured during updatePassword !", e);
+				e.printStackTrace();
+			}
+		}
+		
+	    return 1 == returnValue;
+	
+		
+	  }
+	 
+ 
 }

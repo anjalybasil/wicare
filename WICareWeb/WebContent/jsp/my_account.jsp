@@ -216,14 +216,14 @@
 										<div class="col-sm-6">
 											
 											<label for="first_name" class="required">First Name</label>
-											<input type="text"  id="first_name" name = "firstName" value="${requestScope.user.firstName}" readonly="readonly" >
+											<input type="text"  id="first_name" name = "firstName" value="${requestScope.user.firstName}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 											
 											<label for="last_name" class="required">Last Name</label>
-											<input type="text" id="last_name" name="lastName" value="${requestScope.user.lastName}" readonly="readonly">
+											<input type="text" id="last_name" name="lastName" value="${requestScope.user.lastName}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -235,14 +235,14 @@
 										<div class="col-sm-6">
 											
 											<label for="middle_name">Middle Name</label>										
-											<input type="text" id="middle_name" name="middleName"  value="${requestScope.user.middleName}" readonly="readonly">
+											<input type="text" id="middle_name" name="middleName"  value="${requestScope.user.middleName}" readonly="readonly" >
 
 										</div><!--/ [col] -->
 
 										<div class="col-sm-6">
 											
 											<label for="email_address" class="required">Email Address</label>
-											<input type="text"  id="email_address" name="email" value="${requestScope.user.email}" readonly="readonly">
+											<input type="email"  id="email_address" name="email" value="${requestScope.user.email}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -253,7 +253,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 1</label>
-											<input type="text"  id="addressline1" name ="addressline1" value="${requestScope.user.addressList[0].addressLine1}" readonly="readonly">
+											<input type="text"  id="addressline1" name ="addressline1" value="${requestScope.user.addressList[0].addressLine1}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -264,7 +264,7 @@
 										<div class="col-xs-12">
 
 											<label for="address" class="required">Address 2</label>
-                                          <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}" readonly="readonly">
+                                          <input type="text"  id="addressline2" name ="addressline2" value="${requestScope.user.addressList[0].addressLine2}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -275,7 +275,7 @@
 										<div class="col-sm-6">
 											
 											<label for="city" class="required">City</label>
-											<input type="text"  id="city" name="city" value="${requestScope.user.addressList[0].city}" readonly="readonly">
+											<input type="text"  id="city" name="city" value="${requestScope.user.addressList[0].city}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -283,7 +283,7 @@
 
 											<label class="required">State/Province</label>
 
-											<input type="text"  id="state" name="state" value="${requestScope.user.addressList[0].state}" readonly="readonly">
+											<input type="text"  id="state" name="state" value="${requestScope.user.addressList[0].state}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -294,7 +294,7 @@
 										<div class="col-sm-6">
 
 											<label for="postal_code" class="required">Zip</label>
-											<input type="text"  id="zip" name="zip" value="${requestScope.user.addressList[0].zip}" readonly="readonly">
+											<input type="text"  id="zip" name="zip" value="${requestScope.user.addressList[0].zip}" readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -319,7 +319,7 @@
 										<div class="col-sm-6">
 
 											<label for="telephone" class="required">Telephone</label>
-											<input type="text"  id="phoneNo" name="phoneNo"  value="${requestScope.user.addressList[0].phoneNo}"  readonly="readonly">
+											<input type="text"  id="phoneNo" name="phoneNo"  value="${requestScope.user.addressList[0].phoneNo}"  readonly="readonly" required>
 
 										</div><!--/ [col] -->
 
@@ -351,7 +351,7 @@
 									
 									<li class="row">
 									  <div class="col-sm-6">
-									    <label for="fax4">WIC Account #</label>
+									    <label for="wicacctno">WIC Account #</label>
 									    <input type="text" name="wicacctno" id="wicacctno" value="${requestScope.user.wicAcctNo}"  readonly="readonly">
 								      </div>
 									</li>
