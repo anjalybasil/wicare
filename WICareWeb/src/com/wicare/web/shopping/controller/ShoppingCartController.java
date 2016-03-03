@@ -31,7 +31,8 @@ public class ShoppingCartController
 	final String BACK_TO_PAGE = "category.do?action=print_all_food";
 	final String BACK_TO_CART_FROM_SERVLET = "shoppingcart.do?action=shopping_cart";
 	final String BACK_TO_CART = "jsp/shop_shopping_cart.jsp";
-	final String BACK_HOME = "jsp/home.jsp";
+	final String ORDER_CONFIRMATION = "jsp/order_confirmation.jsp";
+	
 
 	String forwardView;
 	String action;
@@ -220,7 +221,7 @@ public class ShoppingCartController
 			System.out.println("Order Details successfully added.");
 			user.getCurrentOrder().getProducts().clear();
 			System.out.println("Current Order cleared successfully.");
-			response.sendRedirect(BACK_HOME);
+			response.sendRedirect(ORDER_CONFIRMATION);
 		} 
 		catch (CustomException e) {e.printStackTrace();} 
 		catch (IOException e) {e.printStackTrace();}

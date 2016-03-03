@@ -94,22 +94,7 @@
 
 											<img src="${pageContext.request.contextPath}/images/tomato.png" alt="">
 
-											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-										
-									
-											<div class="actions_wrap">
-
-												<div class="centered_buttons">
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-													
-												</div><!--/ .centered_buttons -->
-
-											</div><!--/ .actions_wrap-->
 											
-											
-										
-											
-											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 										</div><!--/. image_wrap-->
 
@@ -135,7 +120,7 @@
 
 										<div class="description">
 
-											<p><a href="#">Lorem Body Wash, Original 24 fl oz</a></p>
+											<p><a href="#">Tomato</a></p>
 
 											<div class="clearfix product_info">
 
@@ -153,7 +138,7 @@
 
 												<!-- - - - - - - - - - - - - - End product rating - - - - - - - - - - - - - - - - -->
 
-												<p class="product_price alignleft"><s>$9.99</s> <b>$5.99</b></p>
+												<p class="product_price alignleft"><s>$2.00</s> <b>$1.00</b></p>
 
 											</div><!--/ .clearfix.product_info-->
 
@@ -173,21 +158,8 @@
 										
 										<div class="image_wrap">
 
-											<img src="${pageContext.request.contextPath}/images/spinach.png" alt="">
+											<img src="${pageContext.request.contextPath}/images/groceries/deanmilk.jpg" alt="">
 
-											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-											<div class="actions_wrap">
-
-												<div class="centered_buttons">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-												</div><!--/ .centered_buttons -->
-
-										  </div><!--/ .actions_wrap-->
-											
-											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 									  </div><!--/. image_wrap-->
 
@@ -213,7 +185,7 @@
 
 										<div class="description">
 
-											<p><a href="#">Ipsum with Ultra Dolor, Size 4 Diapers 29 ea</a></p>
+											<p><a href="#">Dean's 2% Milk</a></p>
 
 											<div class="clearfix product_info">
 
@@ -231,7 +203,7 @@
 
 												<!-- - - - - - - - - - - - - - End product rating - - - - - - - - - - - - - - - - -->
 
-												<p class="product_price alignleft"><s>$16.99</s> <b>$14.99</b></p>
+												<p class="product_price alignleft"><s>$1.99</s> <b>$1.00</b></p>
 
 											</div><!--/ .clearfix.product_info-->
 
@@ -251,21 +223,7 @@
 										
 										<div class="image_wrap">
 
-											<img src="${pageContext.request.contextPath}/images/spinach.png" alt="">
-
-											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-											<div class="actions_wrap">
-
-												<div class="centered_buttons">		
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-												</div><!--/ .centered_buttons -->
-
-											</div><!--/ .actions_wrap-->
-											
-											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
+											<img src="${pageContext.request.contextPath}/images/groceries/apples.jpg" alt="">
 
 										</div><!--/. image_wrap-->
 
@@ -291,11 +249,11 @@
 
 										<div class="description">
 
-											<p><a href="#">Ut  Tellus Dolor, Dapibus Eget, 1000mg, Tablets, 120 ea</a></p>
+											<p><a href="#">Apples</a></p>
 
 											<div class="clearfix product_info">
 
-											  <p class="product_price alignleft"><s>$103.99</s> <b>$73.99</b></p>
+											  <p class="product_price alignleft"><s>$4.00</s> <b>$3.00</b></p>
 
 											</div><!--/ .clearfix.product_info-->
 
@@ -315,20 +273,7 @@
 										
 										<div class="image_wrap">
 
-											<img src="${pageContext.request.contextPath}/images/green_beens.jpg" alt="">
-
-											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-											<div class="actions_wrap">
-
-												<div class="centered_buttons">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-												</div><!--/ .centered_buttons -->
-											</div><!--/ .actions_wrap-->
-											
-											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
+											<img src="${pageContext.request.contextPath}/images/groceries/Bananas.jpg" alt="">
 
 										</div><!--/. image_wrap-->
 
@@ -354,7 +299,7 @@
 
 										<div class="description">
 
-											<p><a href="#">Nulla  Facilisi Aenean Nec Eros Vestibulum, Deep Cleansing 1 each</a></p>
+											<p><a href="#">Banana</a></p>
 
 											<div class="clearfix product_info">
 
@@ -372,7 +317,7 @@
 
 												<!-- - - - - - - - - - - - - - End product rating - - - - - - - - - - - - - - - - -->
 
-												<p class="product_price alignleft"><s>$5.99</s> <b>$2.99</b></p>
+												<p class="product_price alignleft"><s>$2.99</s> <b>$1.99</b></p>
 
 											</div><!--/ .clearfix.product_info-->
 
@@ -392,21 +337,8 @@
 										
 										<div class="image_wrap">
 
-											<img src="${pageContext.request.contextPath}/images/mesh1.png" alt="">
+											<img src="${pageContext.request.contextPath}/images/groceries/Broccoli.jpg" alt="">
 
-											<!-- - - - - - - - - - - - - - Product actions - - - - - - - - - - - - - - - - -->
-
-											<div class="actions_wrap">
-
-												<div class="centered_buttons">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-												</div><!--/ .centered_buttons -->
-
-											</div><!--/ .actions_wrap-->
-											
-											<!-- - - - - - - - - - - - - - End of product actions - - - - - - - - - - - - - - - - -->
 
 										</div><!--/. image_wrap-->
 
@@ -432,11 +364,11 @@
 
 										<div class="description">
 
-											<p><a href="#">Nam  Elit Agna Endrerit Sit Amet, Chocolate Milk 4 ea</a></p>
+											<p><a href="#">Broccoli</a></p>
 
 											<div class="clearfix product_info">
 
-											  <p class="product_price alignleft"><s>$19.99</s> <b>$13.99</b></p>
+											  <p class="product_price alignleft"><s>$2.99</s> <b>$1.99</b></p>
 
 											</div><!--/ .clearfix.product_info-->
 
@@ -583,7 +515,7 @@
 												<div class="caption sfl stl layer_3" data-x="left" data-y="190" data-hoffset="60" data-easing="easeOutBack" data-speed="600" data-start="1100">at Low Prices</div>
 
 												<div class="caption sfb stb" data-x="left" data-y="245" data-hoffset="60" data-easing="easeOutBack" data-speed="700" data-start="1100">
-													<a href="${pageContext.request.contextPath}/category.do?action=print_all_food\" class="button_blue big_btn">Shop Now!</a>
+													<a href="${pageContext.request.contextPath}/category.do?action=print_all_food" class="button_blue big_btn">Shop Now!</a>
 												</div>
 
 											</li>
@@ -659,7 +591,7 @@
 
 							<section class="section_offset animated transparent" data-animation="fadeInDown">
 
-								<h3>WICare Categories</h3>
+								<h3>Product Catalog</h3>
 
 								<!-- - - - - - - - - - - - - - Tabs - - - - - - - - - - - - - - - - -->
 
@@ -688,7 +620,7 @@
 											<!-- - - - - - - - - - - - - - Carousel of featured products - - - - - - - - - - - - - - - - -->
 
 											<div class="owl_carousel carousel_in_tabs">
-											 <c:forEach var="food" items="${foodList.food}" />
+											 
 												<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
 
 												<div class="product_item type_2">
@@ -697,7 +629,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/spinach.png" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/asparagus.png" alt="">
 
 														
 
@@ -715,11 +647,11 @@
 
 													<div class="description">
 
-														<a href="#">Lorem Ipsum Dolor Sit Amet Consectetuer 750mg, Softgels 120 ea</a>
+														<a href="#">Asparagus</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$2.99</b></p>
 
 														</div>
 
@@ -727,15 +659,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
+													
 
 												</div><!--/ .product_item-->
 												
@@ -749,7 +673,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/mesh1.png" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/apples.jpg" alt="">
 
 														
 													</div><!--/. image_wrap-->
@@ -760,11 +684,11 @@
 
 													<div class="description">
 
-														<a href="#">Ut Tellus Dolor Dapibus Eget 30</a>
+														<a href="#">Apples</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$2.99</b></p>
 
 															<!-- - - - - - - - - - - - - - Product rating - - - - - - - - - - - - - - - - -->
 
@@ -786,16 +710,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
 													
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
 												
@@ -809,7 +724,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/potato.png" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/Pineapple_Juice.jpg" alt="">
 
 														
 
@@ -827,11 +742,11 @@
 
 													<div class="description">
 
-														<a href="#">Lorem Ipsum Dolor Sit Consectetuer Adipiscing 15, middle_btn 2.5 fl oz (75ml)</a>
+														<a href="#">Pineapple Juice </a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$1.99</b></p>
 
 														</div>
 
@@ -839,15 +754,6 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-													
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
 												
@@ -879,11 +785,11 @@
 
 													<div class="description">
 
-														<a href="#">Lorem Ipsum Dolor Sit Amet Consectetuer 750mg, Softgels 120 ea</a>
+														<a href="#">Tomato</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$2.99</b></p>
 
 														</div>
 
@@ -891,15 +797,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
 													
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .product_item-->
 												
@@ -935,7 +833,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/deals_img_1.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/Chicken_legsjpg.jpg" alt="">
 
 														
 
@@ -953,11 +851,11 @@
 
 													<div class="description">
 
-														<a href="#">Aenean Auctor Wisi Et Urna 750mg, Softgels 120 ea</a>
+														<a href="#">Chicken Legs</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$10.99</b></p>
 
 														</div>
 
@@ -965,15 +863,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
+							
 
 												</div><!--/ .product_item-->
 												
@@ -987,7 +877,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/tabs_img_2.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/Fresh_Chicken.jpg" alt="">
 
 														
 
@@ -999,11 +889,11 @@
 
 													<div class="description">
 
-														<a href="#">Aenean Auctor Wisi Et Urna 30</a>
+														<a href="#">Fresh Chicken</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$9.99</b></p>
 
 															<!-- - - - - - - - - - - - - - Product rating - - - - - - - - - - - - - - - - -->
 
@@ -1025,15 +915,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
+						
 
 												</div><!--/ .product_item-->
 												
@@ -1047,7 +929,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/tabs_img_3.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/MSA_Beef_Rump.jpg" alt="">
 
 														
 
@@ -1065,11 +947,11 @@
 
 													<div class="description">
 
-														<a href="#">Lorem Ipsum Dolor Amet Consectetuer Adipiscing 15, middle_btn 2.5 fl oz (75ml)</a>
+														<a href="#">Beef</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$10.99</b></p>
 
 														</div>
 
@@ -1077,15 +959,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
+													
 
 												</div><!--/ .product_item-->
 												
@@ -1099,7 +973,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/tabs_img_1.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/Fresh_Chicken.jpg" alt="">
 
 														
 
@@ -1117,11 +991,11 @@
 
 													<div class="description">
 
-														<a href="#">Ut Tellus Dolor Dapibus Eget 750mg, Softgels 120 ea</a>
+														<a href="#">Fresh Chicken</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$6.99</b></p>
 
 														</div>
 
@@ -1129,16 +1003,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
-
+													
 												</div><!--/ .product_item-->
 												
 												<!-- - - - - - - - - - - - - - End product - - - - - - - - - - - - - - - - -->
@@ -1173,7 +1038,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/deals_img_4.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/whole_milk.jpg" alt="">
 
 														
 
@@ -1191,11 +1056,11 @@
 
 													<div class="description">
 
-														<a href="#">Mauris Fermentum Dictum Magna 750mg, Softgels 120 ea</a>
+														<a href="#">Whole Milk</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$1.99</b></p>
 
 														</div>
 
@@ -1203,16 +1068,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
-
+													
 												</div><!--/ .product_item-->
 												
 												<!-- - - - - - - - - - - - - - End product - - - - - - - - - - - - - - - - -->
@@ -1225,7 +1081,7 @@
 
 													<div class="image_wrap">
 
-														<img src="${pageContext.request.contextPath}/images/deals_img_3.jpg" alt="">
+														<img src="${pageContext.request.contextPath}/images/groceries/SkimMilk.jpg" alt="">
 
 														
 
@@ -1237,11 +1093,11 @@
 
 													<div class="description">
 
-														<a href="#">Mauris Fermentum Dictum Magna 30</a>
+														<a href="#">Skim Milk</a>
 
 														<div class="clearfix product_info">
 
-															<p class="product_price alignleft"><b>$44.99</b></p>
+															<p class="product_price alignleft"><b>$1.99</b></p>
 
 															<!-- - - - - - - - - - - - - - Product rating - - - - - - - - - - - - - - - - -->
 
@@ -1263,15 +1119,7 @@
 
 													<!-- - - - - - - - - - - - - - End of product title & price - - - - - - - - - - - - - - - - -->
 
-													<!-- - - - - - - - - - - - - - Actions - - - - - - - - - - - - - - - - -->
-
-													<div class="buttons_row">
-
-													<a href="${pageContext.request.contextPath}/jsp/login.jsp" class="button_blue middle_btn add_to_cart">Add to Cart</a>
-
-													</div>
-
-													<!-- - - - - - - - - - - - - - End of actions - - - - - - - - - - - - - - - - -->
+													
 
 												</div><!--/ .product_item-->
 												

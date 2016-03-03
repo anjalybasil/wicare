@@ -185,7 +185,7 @@ function deleteMethod(action, count)
 													
 												</c:if>
 												<li></li>
-												<li><a href="additional_page_contact.html">Contact Us</a></li>
+												<li><a href="${pageContext.request.contextPath}/jsp/contact_us.jsp">Contact Us</a></li>
 											   
 
 												
@@ -204,7 +204,15 @@ function deleteMethod(action, count)
 
 										<button id="open_shopping_cart" class="open_button" data-amount="${sessionScope.user.currentOrder.products.size()}" >
 											<b class="title">My Cart</b>
-											<b class="total_price">${sessionScope.user.currentOrder.subTotal}</b>
+
+											<b class="total_price">
+											<c:if test="${sessionScope.user.WIC == true}">
+												$ ${sessionScope.user.currentOrder.wicSubTotal}
+											</c:if>
+											<c:if test="${sessionScope.user.WIC == false}">
+												$ ${sessionScope.user.currentOrder.subTotal}
+											</c:if>
+											</b>
 											
 										</button>
 
@@ -227,7 +235,17 @@ function deleteMethod(action, count)
 																																										
 														<a href="#" class="product_name">${food.foodName}</a>
 
-														<p>${food.foodAmount} x ${food.foodPrice * food.foodAmount}</p>
+														<p>${food.foodAmount} x 
+														<c:if test="${sessionScope.user.WIC == true}">
+															<c:out value="$ ${food.wicPrice * food.foodAmount}" />
+														</c:if>
+														<c:if test="${sessionScope.user.WIC == false}">
+															<c:out value="$ ${food.foodPrice * food.foodAmount}" />	
+														</c:if>													
+														
+														
+														
+														</p>
 
 														<button class="close" onClick="deleteMethod('remove_from_cart_dropdown', ${i.index})" ></button><!-- remove delete (make this remove from the shopping cart) -->
 													</div><!--/ .clearfix.sc_product-->
@@ -246,7 +264,24 @@ function deleteMethod(action, count)
 
 														<li><span class="price">Discount:</span> $0.00</li>
 
-														<li class="total"><b><span class="price">Total:</span> ${sessionScope.user.currentOrder.total}</b></li>
+														<li class="total"><b><span class="price">Total:</span> 
+														
+														
+														<c:if test="${sessionScope.user.WIC == true}">
+															<c:out value="$ ${sessionScope.user.currentOrder.wicTotal}" />
+														</c:if>
+														<c:if test="${sessionScope.user.WIC == false}">
+															<c:out value="$ ${sessionScope.user.currentOrder.total}" />
+														</c:if>
+														
+														
+														
+														
+														
+														
+														
+														
+														</b></li>
 
 													</ul>
 													

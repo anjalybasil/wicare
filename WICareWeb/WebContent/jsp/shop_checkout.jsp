@@ -144,10 +144,10 @@
 
 									<li class="row">	
 
-										<div class="col-xs-3">
+										<div class="col-xs-1">
 
 											<label for="Card_CVV" class="required">Card CVV</label>
-											<input type="text" name="" id="Card_CVV">
+											<input type="text" name="" id="Card_CVV" size="3" maxlength="3">
 
 										</div><!--/ [col] -->
 
@@ -374,14 +374,31 @@
 									<c:forEach var="food" items="${sessionScope.user.currentOrder.products}" varStatus="i">
 										<tr>																			
 										  	<td data-title="Product Name">${food.foodName}</td>
-											<td data-title="Price" class="subtotal">${food.foodPrice }</td>
+											<td data-title="Price" class="subtotal">
+											<c:if test="${sessionScope.user.WIC == true}">
+													<c:out value='$ ${food.wicPrice}' />
+												</c:if>
+												<c:if test="${sessionScope.user.WIC == false}">
+													<c:out value='$ ${food.foodPrice}' />
+												</c:if>		
+											
+											</td>
 											<td data-title="Quantity">${food.foodAmount }</td>
-											<td data-title="Total" class="total"><c:out value="${food.foodPrice * food.foodAmount }"/></td>
+											<td data-title="Total" class="total">
+											<c:if test="${sessionScope.user.WIC == true}">
+													<c:out value="${food.wicPrice * food.foodAmount }"/>
+												</c:if>
+												<c:if test="${sessionScope.user.WIC == false}">
+													<c:out value="${food.foodPrice * food.foodAmount }"/>
+												</c:if>																																		
+											</td>
 										</tr>
 									</c:forEach>									
 								</tbody>
 							</table>
 							
+						</div><!--/ .table_wrap -->
+<br/><br/>
 					<div class="section_offset">
 
 						<div class="row">
@@ -397,14 +414,31 @@
 											<tr>
 													
 												<td>Subtotal</td>
-								<td><c:out value='$ ${(sessionScope.user.currentOrder.subTotal)}' /></td>
+								
+											<td>												
+												<c:if test="${sessionScope.user.WIC == true}">
+													<c:out value='$ ${(sessionScope.user.currentOrder.wicSubTotal)}' />
+												</c:if>
+												<c:if test="${sessionScope.user.WIC == false}">
+													<c:out value='$ ${(sessionScope.user.currentOrder.subTotal)}' />	
+												</c:if>												
+											</td>
 
 											</tr>
 
 											<tr class="total">
 													
 												<td>Total</td>
-									<td><c:out value='$ ${sessionScope.user.currentOrder.total}' /></td>
+									<td>
+									
+									<c:if test="${sessionScope.user.WIC == true}">
+													<c:out value='$ ${(sessionScope.user.currentOrder.wicTotal)}' />
+												</c:if>
+												<c:if test="${sessionScope.user.WIC == false}">
+													<c:out value='$ ${(sessionScope.user.currentOrder.total)}' />	
+												</c:if>		
+									
+									</td>
 
 											</tr>
 
@@ -415,8 +449,6 @@
 								</div>
 							</div>
 						</div>
-						</div><!--/ .table_wrap -->
-
 						<footer class="bottom_box on_the_sides">
 
 							<div class="left_side v_centered">

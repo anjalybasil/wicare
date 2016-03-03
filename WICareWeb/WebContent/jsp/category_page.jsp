@@ -101,10 +101,10 @@
 										
 										<select name="">
 												
-											<option value="Fruits">Default</option>
-											<option value="Vegetables">Price</option>
-											<option value="Meats">Name</option>
-											<option value="Snacks">Date</option>
+											<option value="Fruits"></option>
+											<option value="Vegetables"></option>
+											<option value="Meats"></option>
+											<option value="Snacks"></option>
 
 										</select>
 

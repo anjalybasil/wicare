@@ -109,7 +109,7 @@
 											<td data-title="Order Date"><c:out value="${order.orderDate}"/></td>
 										
 
-											<td data-title="Order Status">Pending</td>
+											<td data-title="Order Status">Confirmed</td>
 
 											<td data-title="Total" class="total"><c:out value="${order.orderTotal}"/></td>
 

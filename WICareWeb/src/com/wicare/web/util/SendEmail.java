@@ -15,8 +15,20 @@ import org.apache.log4j.Logger;
 public class SendEmail
 {
   
-	private static Session session;
-	static {
+	
+	public static Logger logger = Logger.getLogger(SendEmail.class);
+	
+
+   
+   
+   
+   public String sendEmail(String toEmail) {
+	
+	
+
+
+	try {
+		
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
@@ -26,34 +38,15 @@ public class SendEmail
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.port", "465");
 
-		session = Session.getDefaultInstance(props,
+		Session session = Session.getDefaultInstance(props,
 				new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication("anjalybbpm@gmail.com","");
+						return new PasswordAuthentication("wicareinfo@gmail.com","wicareinfo123");
 					}
 				});
-	}
-	
-	public static Logger logger = Logger.getLogger(SendEmail.class);
-	
-	public static void main(String [] args)
-     {    
-		sendEmail("anjalybbpm@gmail.com");
-     }
-
-
-   
-   
-   
-   public static String sendEmail(String toEmail) {
-	
-	
-
-
-	try {
 
 		Message message = new MimeMessage(session);
-		message.setFrom(new InternetAddress("forgotpassword@wicare.com"));
+		message.setFrom(new InternetAddress("wicareinfo@gmail.com"));
 		message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse(toEmail));
 		message.setSubject("WICare Forgot Passwoed Support");

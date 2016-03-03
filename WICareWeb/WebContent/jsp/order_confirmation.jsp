@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page import = "java.util.*" import = "com.wicare.dto.*" language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 	<head>
 		<!-- Basic page needs
 		============================================ -->
-		<title>WICare | Contact</title>
+		<title>WICare | Order #145000007 - Pending</title>
 		<meta charset="utf-8">
 		<meta name="author" content="">
 		<meta name="description" content="">
@@ -47,16 +49,12 @@
 		<![endif]-->
 	</head>
 	<body>
-
+		<jsp:include page="/inc/header.jsp" />
 		<!-- - - - - - - - - - - - - - Main Wrapper - - - - - - - - - - - - - - - - -->
 
 		<div class="wide_layout">
 
-			<!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->
 
-	<jsp:include page="/inc/header.jsp"></jsp:include>
-			
-			<!-- - - - - - - - - - - - - - End Header - - - - - - - - - - - - - - - - -->
 
 			<!-- - - - - - - - - - - - - - Page Wrapper - - - - - - - - - - - - - - - - -->
 
@@ -69,182 +67,53 @@
 					<ul class="breadcrumbs">
 
 						<li><a href="../index.html">Home</a></li>
-						<li>Contact Us</li>
+						<li>My Orders</li>
 
 					</ul>
 
-					<div class="row">
+					<!-- - - - - - - - - - - - - - End of breadcrumbs - - - - - - - - - - - - - - - - -->
 
-						<aside class="col-md-3 col-sm-4">
-
-							<!-- - - - - - - - - - - - - - Information - - - - - - - - - - - - - - - - -->
-
-							<section class="section_offset">
-
-								<h3>Information</h3>
-
-								<ul class="theme_menu">
-
-									<li><a href="${pageContext.request.contextPath}/about_us.jsp">About Us</a></li>
-									<li><a href="#">Delivery Information</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Terms &amp; Conditions</a></li>
-									<li class="active"><a href="../additional_page_contact.html">Contact Us</a></li>
-									<li><a href="FAQ_page.html">FAQ</a></li>
-									<li></li>
-
-								</ul>
-
-							</section><!--/ .section_offset -->
-
-							<!-- - - - - - - - - - - - - - End of information - - - - - - - - - - - - - - - - -->
-
-							<!-- - - - - - - - - - - - - - Banner - - - - - - - - - - - - - - - - -->
-
-							<div class="section_offset"></div>
-
-							<!-- - - - - - - - - - - - - - End of banner - - - - - - - - - - - - - - - - -->
-
-							<!-- - - - - - - - - - - - - - Sign Up to Our Newsletter - - - - - - - - - - - - - - - - --><!-- - - - - - - - - - - - - - End of Sign Up to Our Newsletter - - - - - - - - - - - - - - - - -->
-
-							<!-- - - - - - - - - - - - - - Testimonials - - - - - - - - - - - - - - - - --><!--/ .section_offset.animated.transparent-->
-
-							<!-- - - - - - - - - - - - - - End of testimonials - - - - - - - - - - - - - - - - -->
-
-						</aside><!--/ [col]-->
+					<div class="row"> <!--/ [col]-->
 
 						<main class="col-md-9 col-sm-8">
 
-							<h1 class="page_title">Contact Us</h1>
+							<h1></h1>
 
-							<section class="section_offset">
-								
-								<h3>Contact Form</h3>
+							<!-- - - - - - - - - - - - - - Order table - - - - - - - - - - - - - - - - -->
 
-								<div class="theme_box">
+							<div class="section_offset">
 
-									<p class="form_caption">&nbsp;</p>
+								<header class="top_box">
 
-									<!-- - - - - - - - - - - - - - Contact form - - - - - - - - - - - - - - - - -->
+									<div class="buttons_row">
 
-									<form novalidate enctype="multipart/form-data" class="contactform type_2" id="contact_form">
-
-										<ul>
 										
-											<li class="row">
 
-												<div class="col-sm-6">
-												
-													<label for="cf_name" class="required">Name</label>
-													<input type="text" required name="cf_name" id="cf_name" title="Name">
-
-												</div><!--/ [col]-->
-
-												<div class="col-sm-6">
-
-													<label for="cf_email" class="required">Email Address</label>
-													<input type="email" required name="cf_email" id="cf_email" title="Email">
-
-												</div><!--/ [col]-->
-
-											</li><!--/ .row -->
-
-											<li class="row">
-
-												<div class="col-xs-12">
-
-													<label for="cf_order_number">Order number</label>
-													<input type="text" name="cf_order_number" id="cf_order_number" title="Order number">
-
-												</div><!--/ [col]-->
-
-											</li><!--/ .row -->
-
-											<li class="row">
-
-												<div class="col-xs-12">
-
-													<label for="cf_message" class="required">Message</label>
-													<textarea id="cf_message" required name="cf_message" title="Message" rows="6"></textarea>
-
-												</div><!--/ [col]-->
-
-											</li><!--/ .row -->
-
-										</ul>
-
-									</form><!--/ .contactform -->
-
-									<!-- - - - - - - - - - - - - - End of contact form - - - - - - - - - - - - - - - - -->
-
-								</div><!--/ .theme_box -->
-
-								<footer class="bottom_box on_the_sides">
-
-									<div class="left_side">
-									
-										<button class="button_dark_grey middle_btn" type="submit" form="contact_form">Submit</button>
+									  <h1><a href="${pageContext.request.contextPath}/jsp/home.jsp" class="button_grey middle_btn">Your order is placed, Thank you.
+									    
+									    </a></h1>
 
 									</div>
 
-									<div class="right_side">
+								</header>
+</div><!--/ .section_offset -->
 
-										<p class="prompt">Required Fields</p>
+							<!-- - - - - - - - - - - - - - End of order table - - - - - - - - - - - - - - - - -->
 
-									</div>
+							<div class="section_offset">
 
-								</footer>
+								<div class="row"> <!--/ [col] -->									<!--/ [col] -->
 
+								</div><!--/ .row -->
+
+							</div><!--/ .section_offset -->
+
+							<!-- - - - - - - - - - - - - - Items ordered - - - - - - - - - - - - - - - - -->
+
+							<section class="section_offset"> <!--/ .table_wrap -->
 							</section>
 
-							<section class="section_offset">
-
-								<h3>Contact Information</h3>
-
-								<div class="theme_box">
-
-									<div class="row">
-
-										<div class="col-sm-5">
-
-											<div class="proportional_frame">
-
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11658.462684975322!2d-89.39002218706464!3d43.07055011641937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb4322e72044efadb!2s433+W+Washington+Ave%2C+Madison%2C+WI+53703!5e0!3m2!1sen!2sus!4v1456246575135" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-											</div>
-
-										</div><!--/ [col]-->
-
-										<div class="col-sm-7">
-
-											<p class="form_caption">WICare</p>
-
-											<ul class="c_info_list">
-
-												<li class="c_info_location">433 W Washington Ave, Madison, WI 53703</li>
-												<li class="c_info_phone">(608) 283-3030</li>
-												<li class="c_info_mail"><a href="mailto:#">info@WICare.com</a></li>
-												<li class="c_info_schedule">
-
-													<ul>
-
-														<li>Monday-Friday: 8.00-20.00</li>
-														<li>Saturday: 9.00-15.00</li>
-														<li>Sunday: closed</li>
-
-													</ul>
-
-												</li>
-
-											</ul>
-
-										</div><!--/ [col]-->
-
-									</div><!--/ .row -->
-
-								</div><!--/ .theme_box -->
-
-							</section>
+							<!-- - - - - - - - - - - - - - End of items ordered - - - - - - - - - - - - - - - - -->
 
 						</main><!--/ [col]-->
 
@@ -256,11 +125,7 @@
 			
 			<!-- - - - - - - - - - - - - - End Page Wrapper - - - - - - - - - - - - - - - - -->
 
-			<!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
-
-			<jsp:include page="/inc/footer.jsp"></jsp:include>
-			
-			<!-- - - - - - - - - - - - - - End Footer - - - - - - - - - - - - - - - - -->
+	<jsp:include page="/inc/footer.jsp" />
 
 		</div><!--/ [layout]-->
 		
@@ -341,7 +206,7 @@
 					 
 					<div class="animated_item">
 
-						<p class="form_caption"></p>
+						<p class="form_caption">Lorem ipsum dolor sit amet, adipis mauris accumsan.</p>
 
 						<form class="contactform" novalidate>
 
@@ -351,7 +216,7 @@
 
 									<div class="col-xs-12">
 
-										<input type="text" title="Name" required name="cf_name" placeholder="Your name">
+										<input type="text" required title="Name" name="cf_name" placeholder="Your name">
 
 									</div>
 
@@ -361,7 +226,7 @@
 
 									<div class="col-xs-12">
 
-										<input type="email" title="Email" required name="cf_email" placeholder="Your address">
+										<input type="email" required title="Email" name="cf_email" placeholder="Your address">
 
 									</div>
 
@@ -417,18 +282,18 @@
 					 
 					<div class="animated_item">
 						
-						<p class="c_info_location">443 W washington <br>Madison, 53703</p>
+						<p class="c_info_location">8901 Marmora Road,<br>Glasgow, D04 89GR.</p>
 
 						<div class="proportional_frame">
 
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11658.462684975322!2d-89.39002218706464!3d43.07055011641937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb4322e72044efadb!2s433+W+Washington+Ave%2C+Madison%2C+WI+53703!5e0!3m2!1sen!2sus!4v1456246575135" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3024.238131852431!2d-74.006059!3d40.712773999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fda88cefb3%3A0x7f1e88758d210007!2z0J3RjNGOLdC50L7RgNC60YHQutC40Lkg0KHQuNGC0Lgt0YXQvtC70Ls!5e0!3m2!1sru!2sua!4v1415946524959" style="border:0"></iframe>
 
 						</div>
 
 						<ul class="c_info_list">
 
 							<li class="c_info_phone">800-599-65-80</li>
-							<li class="c_info_mail"><a href="mailto:#">info@wicare.com</a></li>
+							<li class="c_info_mail"><a href="mailto:#">info@companyname.com</a></li>
 							<li class="c_info_schedule">
 
 								<ul>

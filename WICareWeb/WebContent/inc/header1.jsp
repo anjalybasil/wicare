@@ -51,6 +51,11 @@ function submitThisForm(f) {
 	return true;
 }
 
+function deleteMethod(action, count)
+{
+	var URL = "../shoppingcart.do?action="+action+"&product=" + id;
+	window.location.href= URL;
+}
 </script>
 
 
@@ -70,7 +75,7 @@ function submitThisForm(f) {
 
 									<!-- - - - - - - - - - - - - - Logo - - - - - - - - - - - - - - - - -->
 
-									<a href="index.html" class="logo">
+									<a href="${pageContext.request.contextPath}/jsp/home.jsp" class="logo">
 
 										<img src="${pageContext.request.contextPath}/images/WIClogo2.png" alt="" width="339" height="80">
 
@@ -196,6 +201,7 @@ function submitThisForm(f) {
 											<ul>
 
 												<li><a href="${pageContext.request.contextPath}/jsp/home.jsp">Home</a></li>
+												
 												<c:if test="${sessionScope.hasLoggedIn != null and sessionScope.hasLoggedIn}">	
 												   
 																							
@@ -211,11 +217,11 @@ function submitThisForm(f) {
 													
 													
 													<li><a href="${pageContext.request.contextPath}/jsp/shop_shopping_cart.jsp">Shopping Cart</a></li>
-													<li><a href="shop_checkout.html">Checkout</a></li>
+													<li><a href="${pageContext.request.contextPath}/jsp/shop_checkout.jsp">Checkout</a></li>
 													
 												</c:if>
 												<li></li>
-												<li><a href="additional_page_contact.html">Contact Us</a></li>
+												<li><a href="${pageContext.request.contextPath}/jsp/contact_us.jsp">Contact Us</a></li>
 											   
 
 												
@@ -234,7 +240,15 @@ function submitThisForm(f) {
 
 										<button id="open_shopping_cart" class="open_button" data-amount="${sessionScope.user.currentOrder.products.size()}" >
 											<b class="title">My Cart</b>
-											<b class="total_price">${sessionScope.user.currentOrder.subTotal}</b>
+
+											<b class="total_price">
+											<c:if test="${sessionScope.user.WIC == true}">
+												$ ${sessionScope.user.currentOrder.wicSubTotal}
+											</c:if>
+											<c:if test="${sessionScope.user.WIC == false}">
+												$ ${sessionScope.user.currentOrder.subTotal}
+											</c:if>
+											</b>
 											
 										</button>
 
@@ -243,7 +257,8 @@ function submitThisForm(f) {
 										<div class="shopping_cart dropdown">
 
 												<div class="animated_item">
-
+												<div style="overflow: scroll ; overflow-x: hidden; max-height: 350px; width: 100%;">
+												
 													<p class="title">Recently added item(s)</p>
 
 													<!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
@@ -256,10 +271,19 @@ function submitThisForm(f) {
 																																										
 														<a href="#" class="product_name">${food.foodName}</a>
 
-														<p>${food.foodAmount} x ${food.foodPrice * food.foodAmount}</p>
+														<p>${food.foodAmount} x 
+														<c:if test="${sessionScope.user.WIC == true}">
+															<c:out value="$ ${food.wicPrice * food.foodAmount}" />
+														</c:if>
+														<c:if test="${sessionScope.user.WIC == false}">
+															<c:out value="$ ${food.foodPrice * food.foodAmount}" />	
+														</c:if>													
+														
+														
+														
+														</p>
 
-														<button class="close"></button><!-- remove delete (make this remove from the shopping cart) -->
-
+														<button class="close" onClick="deleteMethod('remove_from_cart_dropdown', ${i.index})" ></button><!-- remove delete (make this remove from the shopping cart) -->
 													</div><!--/ .clearfix.sc_product-->
 													
 													</c:forEach>
@@ -276,11 +300,28 @@ function submitThisForm(f) {
 
 														<li><span class="price">Discount:</span> $0.00</li>
 
-														<li class="total"><b><span class="price">Total:</span> ${sessionScope.user.currentOrder.total}</b></li>
+														<li class="total"><b><span class="price">Total:</span> 
+														
+														
+														<c:if test="${sessionScope.user.WIC == true}">
+															<c:out value="$ ${sessionScope.user.currentOrder.wicTotal}" />
+														</c:if>
+														<c:if test="${sessionScope.user.WIC == false}">
+															<c:out value="$ ${sessionScope.user.currentOrder.total}" />
+														</c:if>
+														
+														
+														
+														
+														
+														
+														
+														
+														</b></li>
 
 													</ul>
 													
-													<!-- - - - - - - - - - - - - - End of total info - - - - - - - - - - - - - - - - -->
+											</div>	<!-- - - - - - - - - - - - - - End of total info - - - - - - - - - - - - - - - - -->
 
 												</div><!--/ .animated_item-->
 

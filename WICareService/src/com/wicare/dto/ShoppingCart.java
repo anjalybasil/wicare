@@ -33,7 +33,7 @@ public class ShoppingCart
 		return Double.valueOf(df.format(subTotal));
 	}
 
-	private double getWicSubTotal() 
+	public double getWicSubTotal() 
 	{
 		DecimalFormat df = new DecimalFormat("####.##");
 		this.wicSubTotal = calculateWicSubTotal();
@@ -42,7 +42,7 @@ public class ShoppingCart
 		return Double.valueOf(df.format(this.wicSubTotal));
 	}
 
-	private double calculateWicSubTotal() 
+	public double calculateWicSubTotal() 
 	{
 		double amt = 0;
 		for(int i = 0; i < this.products.size(); i++)
@@ -52,7 +52,7 @@ public class ShoppingCart
 		return amt;
 	}
 
-	private double calculateSubTotal() 
+	public double calculateSubTotal() 
 	{	
 		double amt = 0;
 		//Loop through currentOrder and determine total

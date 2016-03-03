@@ -68,6 +68,7 @@ public class FoodDAOImpl implements FoodDAO
 				food.setFoodID(resultSet.getInt("product_id"));
 				food.setFoodName(resultSet.getString("product_name"));
 				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setWicPrice(resultSet.getDouble("product_wic_price"));
 				food.setFoodCategory(resultSet.getString("product_category"));
 				food.setFoodAmount(resultSet.getInt("product_amount"));
 				food.setImgFile(resultSet.getString("product_img_file"));
@@ -119,6 +120,7 @@ public class FoodDAOImpl implements FoodDAO
 				food.setFoodID(resultSet.getInt("product_id"));
 				food.setFoodName(resultSet.getString("product_name"));
 				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setWicPrice(resultSet.getDouble("product_wic_price"));
 				food.setFoodCategory(resultSet.getString("product_category"));
 				food.setFoodAmount(resultSet.getInt("product_amount"));
 				food.setImgFile(resultSet.getString("product_img_file"));
@@ -169,6 +171,7 @@ public class FoodDAOImpl implements FoodDAO
 				food.setFoodID(resultSet.getInt("product_id"));
 				food.setFoodName(resultSet.getString("product_name"));
 				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setWicPrice(resultSet.getDouble("product_wic_price"));
 				food.setFoodCategory(resultSet.getString("product_category"));
 				food.setFoodAmount(resultSet.getInt("product_amount"));
 				food.setImgFile(resultSet.getString("product_img_file"));
@@ -217,6 +220,7 @@ public class FoodDAOImpl implements FoodDAO
 				food.setFoodID(resultSet.getInt("product_id"));
 				food.setFoodName(resultSet.getString("product_name"));
 				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setWicPrice(resultSet.getDouble("product_wic_price"));
 				food.setFoodCategory(resultSet.getString("product_category"));
 				food.setFoodAmount(resultSet.getInt("product_amount"));
 				food.setImgFile(resultSet.getString("product_img_file"));
@@ -268,6 +272,7 @@ public class FoodDAOImpl implements FoodDAO
 				food.setFoodID(resultSet.getInt("product_id"));
 				food.setFoodName(resultSet.getString("product_name"));
 				food.setFoodPrice(resultSet.getDouble("product_price"));
+				food.setWicPrice(resultSet.getDouble("product_wic_price"));
 				food.setFoodCategory(resultSet.getString("product_category"));
 				food.setFoodAmount(resultSet.getInt("product_amount"));
 				food.setImgFile(resultSet.getString("product_img_file"));

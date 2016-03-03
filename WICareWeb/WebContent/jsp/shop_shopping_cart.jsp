@@ -130,7 +130,12 @@
 
 										<td class="subtotal" data-title="Price">
 											
-											<c:out value='${currentOrder.foodPrice}' />
+											<c:if test="${sessionScope.user.WIC == true}">
+												<c:out value="$ ${currentOrder.wicPrice}" />
+											</c:if>
+											<c:if test="${sessionScope.user.WIC == false}">
+												<c:out value="$ ${currentOrder.foodPrice}" />
+											</c:if>
 
 										</td>
 
@@ -155,7 +160,13 @@
 										<!-- - - - - - - - - - - - - - Total - - - - - - - - - - - - - - - - -->
 
 										<td class="total" data-title="Total">
-											<c:out value='${currentOrder.foodPrice * currentOrder.foodAmount}' />
+										
+											<c:if test="${sessionScope.user.WIC == true}">
+												<c:out value="$ ${currentOrder.wicPrice * currentOrder.foodAmount}" />
+											</c:if>
+											<c:if test="${sessionScope.user.WIC == false}">
+												<c:out value="$ ${currentOrder.foodPrice * currentOrder.foodAmount}" />
+											</c:if>
 										</td>
 
 										<!-- - - - - - - - - - - - - - End of total - - - - - - - - - - - - - - - - -->
@@ -204,14 +215,32 @@
 											<tr>
 													
 												<td>Subtotal</td>
-								<td><c:out value='$ ${(sessionScope.user.currentOrder.subTotal)}' /></td>
+								<td>
+									<c:if test="${sessionScope.user.WIC == true}">
+										<c:out value='$ ${(sessionScope.user.currentOrder.wicSubTotal)}' />
+									</c:if>
+									<c:if test="${sessionScope.user.WIC == false}">
+										<c:out value='$ ${(sessionScope.user.currentOrder.subTotal)}' />
+									</c:if>	
+								
+								</td>
 
 											</tr>
 
 											<tr class="total">
 													
 												<td>Total</td>
-									<td><c:out value='$ ${sessionScope.user.currentOrder.total}' /></td>
+									<td>
+									
+									<c:if test="${sessionScope.user.WIC == true}">
+										<c:out value='$ ${sessionScope.user.currentOrder.wicTotal}' />
+									</c:if>
+									<c:if test="${sessionScope.user.WIC == false}">
+										<c:out value='$ ${sessionScope.user.currentOrder.total}' />
+									</c:if>	
+									
+									
+									</td>
 
 											</tr>
 

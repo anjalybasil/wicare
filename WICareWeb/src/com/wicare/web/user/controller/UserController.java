@@ -183,7 +183,7 @@ public class UserController {
 	public boolean updatePasswordAndSendEmail(HttpServletRequest request, HttpServletResponse response) throws CustomException{
 		
 		String email = request.getParameter("email");
-		String password = SendEmail.sendEmail(email);
+		String password = new SendEmail().sendEmail(email);
 		if(null != password){
 			UserDelegate userDelegate = getUserDelegate();
 			EncryptionUtil  encryptionUtil = new EncryptionUtil();
