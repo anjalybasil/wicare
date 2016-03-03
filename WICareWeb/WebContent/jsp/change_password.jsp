@@ -30,7 +30,7 @@
 	
 					<div class="row"><!--/ [col]-->
 					
-					 
+					 	<jsp:include page="/inc/myaccountmenu.jsp"/>
 
 						<main class="col-md-9 col-sm-8">
 
